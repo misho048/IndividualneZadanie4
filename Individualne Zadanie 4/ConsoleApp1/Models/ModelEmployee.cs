@@ -13,7 +13,18 @@ namespace Data.Models
         public string Name { get; set; }
         public string Surname { get; set; }
         public string PhoneNumber { get; set; } 
-        public string Mail { get; set; }
+        public string Email { get; set; }
         public int? DepartmentId { get; set; }
+
+
+        public override string ToString()
+        {
+
+            return $"{Title} {Name} {Surname}";
+        }
+
+
     }
+
+    
 }

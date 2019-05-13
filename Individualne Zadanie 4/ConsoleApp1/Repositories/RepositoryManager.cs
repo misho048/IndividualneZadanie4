@@ -20,7 +20,7 @@ namespace Data.Repositories
         {
             try
             {
-                using (SqlConnection connection = new SqlConnection(Data.Properties.Settings.Default.ConnectionString))
+                using (SqlConnection connection = new SqlConnection(Properties.Settings.Default.ConnectionString))
                 {
                     connection.Open();
                     try

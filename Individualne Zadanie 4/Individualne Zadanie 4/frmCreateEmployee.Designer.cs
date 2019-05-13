@@ -35,11 +35,11 @@
             this.lblEmail = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtBoxTitle = new System.Windows.Forms.TextBox();
+            this.txtBoxName = new System.Windows.Forms.TextBox();
+            this.txtBoxSurname = new System.Windows.Forms.TextBox();
+            this.txtBoxPhoneNumber = new System.Windows.Forms.TextBox();
+            this.txtBoxEmail = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -101,6 +101,7 @@
             this.btnConfirm.TabIndex = 5;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
             // btnCancel
             // 
@@ -113,56 +114,56 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // textBox1
+            // txtBoxTitle
             // 
-            this.textBox1.Location = new System.Drawing.Point(227, 36);
-            this.textBox1.MaxLength = 4;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(208, 20);
-            this.textBox1.TabIndex = 7;
+            this.txtBoxTitle.Location = new System.Drawing.Point(227, 36);
+            this.txtBoxTitle.MaxLength = 4;
+            this.txtBoxTitle.Name = "txtBoxTitle";
+            this.txtBoxTitle.Size = new System.Drawing.Size(208, 20);
+            this.txtBoxTitle.TabIndex = 7;
             // 
-            // textBox2
+            // txtBoxName
             // 
-            this.textBox2.Location = new System.Drawing.Point(227, 71);
-            this.textBox2.MaxLength = 19;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(208, 20);
-            this.textBox2.TabIndex = 8;
+            this.txtBoxName.Location = new System.Drawing.Point(227, 71);
+            this.txtBoxName.MaxLength = 20;
+            this.txtBoxName.Name = "txtBoxName";
+            this.txtBoxName.Size = new System.Drawing.Size(208, 20);
+            this.txtBoxName.TabIndex = 8;
             // 
-            // textBox3
+            // txtBoxSurname
             // 
-            this.textBox3.Location = new System.Drawing.Point(227, 117);
-            this.textBox3.MaxLength = 19;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(208, 20);
-            this.textBox3.TabIndex = 9;
+            this.txtBoxSurname.Location = new System.Drawing.Point(227, 117);
+            this.txtBoxSurname.MaxLength = 20;
+            this.txtBoxSurname.Name = "txtBoxSurname";
+            this.txtBoxSurname.Size = new System.Drawing.Size(208, 20);
+            this.txtBoxSurname.TabIndex = 9;
             // 
-            // textBox4
+            // txtBoxPhoneNumber
             // 
-            this.textBox4.Location = new System.Drawing.Point(227, 163);
-            this.textBox4.MaxLength = 14;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(208, 20);
-            this.textBox4.TabIndex = 10;
+            this.txtBoxPhoneNumber.Location = new System.Drawing.Point(227, 163);
+            this.txtBoxPhoneNumber.MaxLength = 15;
+            this.txtBoxPhoneNumber.Name = "txtBoxPhoneNumber";
+            this.txtBoxPhoneNumber.Size = new System.Drawing.Size(208, 20);
+            this.txtBoxPhoneNumber.TabIndex = 10;
             // 
-            // textBox5
+            // txtBoxEmail
             // 
-            this.textBox5.Location = new System.Drawing.Point(227, 210);
-            this.textBox5.MaxLength = 49;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(208, 20);
-            this.textBox5.TabIndex = 11;
+            this.txtBoxEmail.Location = new System.Drawing.Point(227, 210);
+            this.txtBoxEmail.MaxLength = 50;
+            this.txtBoxEmail.Name = "txtBoxEmail";
+            this.txtBoxEmail.Size = new System.Drawing.Size(208, 20);
+            this.txtBoxEmail.TabIndex = 11;
             // 
             // frmCreateEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 370);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBoxEmail);
+            this.Controls.Add(this.txtBoxPhoneNumber);
+            this.Controls.Add(this.txtBoxSurname);
+            this.Controls.Add(this.txtBoxName);
+            this.Controls.Add(this.txtBoxTitle);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.lblEmail);
@@ -187,10 +188,10 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtBoxTitle;
+        private System.Windows.Forms.TextBox txtBoxName;
+        private System.Windows.Forms.TextBox txtBoxSurname;
+        private System.Windows.Forms.TextBox txtBoxPhoneNumber;
+        private System.Windows.Forms.TextBox txtBoxEmail;
     }
 }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 15 for Windows Desktop
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Individualne Zadanie 4", "Individualne Zadanie 4\Individualne Zadanie 4.csproj", "{B1FD2135-A46A-4A1B-991E-BEB00B1B7C0A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IndividualneZadanie4", "Individualne Zadanie 4\IndividualneZadanie4.csproj", "{B1FD2135-A46A-4A1B-991E-BEB00B1B7C0A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Data", "ConsoleApp1\Data.csproj", "{DF140C00-55BD-4E9D-B584-81DD21114A0E}"
 EndProject

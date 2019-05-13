@@ -18,16 +18,30 @@ namespace Data.Repositories
             bool isSuccessful = false;
             RepositoryManager.ExecuteSqlCommand((command) =>
             {
-                command.CommandText = @"insert into [dbo].[Employee]
+                if (employee.DepartmentId == null)
+                {
+                    command.CommandText = @"insert into [dbo].[Employee]
+                        values (@Title,@Name,@Surname,@PhoneNumber,@Mail,null)";
+                }
+                else
+                {
+
+                    command.CommandText = @"insert into [dbo].[Employee]
                         values (@Title,@Name,@Surname,@PhoneNumber,@Mail,@DepartmentID)";
+                    command.Parameters.Add("@DepartmentID", SqlDbType.Int).Value = employee.DepartmentId;
+                }
 
                 command.Parameters.Add("@Title", SqlDbType.NVarChar).Value = employee.Title;
                 command.Parameters.Add("@Name", SqlDbType.NVarChar).Value = employee.Name;
                 command.Parameters.Add("@Surname", SqlDbType.NVarChar).Value = employee.Surname;
                 command.Parameters.Add("@PhoneNumber", SqlDbType.NVarChar).Value = employee.PhoneNumber;
-                command.Parameters.Add("@Mail", SqlDbType.NVarChar).Value = employee.Mail;
-                command.Parameters.Add("@DepartmentID", SqlDbType.Int).Value = employee.DepartmentId;
+                command.Parameters.Add("@Mail", SqlDbType.NVarChar).Value = employee.Email;
 
+
+                if (command.ExecuteNonQuery() > 0)
+                {
+                    isSuccessful = true;
+                }
             });
 
             return isSuccessful;
@@ -35,7 +49,7 @@ namespace Data.Repositories
 
         public List<ModelEmployee> GetListOfEmployees() {
 
-       List<ModelEmployee> myListOfEmployees = new List<ModelEmployee>();
+        List<ModelEmployee> myListOfEmployees = new List<ModelEmployee>();
             RepositoryManager.ExecuteSqlCommand((command) =>
             {
                 command.CommandText = @"select * from [dbo].[Employee]";
@@ -49,8 +63,10 @@ namespace Data.Repositories
                         employee.Name = reader.GetString(2);
                         employee.Surname = reader.GetString(3);
                         employee.PhoneNumber = reader.IsDBNull(4) ? "" : reader.GetString(4);
-                        employee.DepartmentId = reader.IsDBNull(5) ? null : (int?)reader.GetInt32(5);
+                        employee.Email = reader.GetString(5);
+                        employee.DepartmentId = reader.IsDBNull(6) ? null : (int?)reader.GetInt32(6);
                         myListOfEmployees.Add(employee);
+                        
                     }
                 }
 
@@ -59,7 +75,44 @@ namespace Data.Repositories
 
         }
 
-        
+        public bool DeleteEmployee (int employeeId)
+        {
+            bool isSuccessful = false;
+            RepositoryManager.ExecuteSqlCommand((command) =>
+            {
+               command.CommandText= @"update [dbo].[Employee]
+                                           set DepartmentId=null
+                                           where Id = @Id
+                                           delete from [dbo].[Employee]
+                                           where Id = @Id";
+
+                command.Parameters.Add("@Id", SqlDbType.Int).Value = employeeId;
+
+
+                if (command.ExecuteNonQuery() > 0)
+                {
+                    isSuccessful = true;
+                }
+            });
+
+            return isSuccessful;
+        }
+
+        public void SetDepartmentForEmployee(int employeeId,int departmentId)
+        {
+            RepositoryManager.ExecuteSqlCommand((command) =>
+            {
+            command.CommandText = @"update [dbo].[Employee]
+                                           set DepartmentId=@DepartmentId
+                                           where Id = @Id";  
+
+                command.Parameters.Add("@Id", SqlDbType.Int).Value = employeeId;
+                command.ExecuteNonQuery();
+            });
+
+        }
+
+
 
     }
 }
