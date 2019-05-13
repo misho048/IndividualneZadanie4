@@ -1,0 +1,9 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Individualne_Zadanie_4.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConnectionString" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Server = TRANSFORMER1\SQLEXPRESS2016; Database=CompanyOrganization;Trusted_Connection=True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
