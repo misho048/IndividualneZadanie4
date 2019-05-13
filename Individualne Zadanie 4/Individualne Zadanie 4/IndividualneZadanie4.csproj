@@ -57,12 +57,6 @@
     <Compile Include="frmChooseCompany.Designer.cs">
       <DependentUpon>frmChooseCompany.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmConnection.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmConnection.Designer.cs">
-      <DependentUpon>frmConnection.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmCreateCompany.cs">
       <SubType>Form</SubType>
     </Compile>
