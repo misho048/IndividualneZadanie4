@@ -17,11 +17,13 @@ namespace Individualne_Zadanie_4
     {
         private Connections _connections = new Connections();
 
+
         public BindingList<ModelDepartment> GetCompanies ()
         {
             return new BindingList<ModelDepartment>(
             RepositoryManager.RepositoryDepartment.GetListOfDepartments(EnumDepartmentsType.DepartmentType.Company));
         }
+
 
         public void CheckConnection()
         {

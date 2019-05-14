@@ -13,6 +13,7 @@ namespace Data.Repositories
 
         public static RepositoryDepartment RepositoryDepartment = new RepositoryDepartment();
 
+
         public static RepositoryEmployee RepositoryEmployee = new RepositoryEmployee();
 
 

@@ -12,16 +12,11 @@ namespace Individualne_Zadanie_4
     class CreateCompanyViewModel
     {
 
-        public BindingList<ModelEmployee> GetEmployees()
+        public ModelEmployee GetEmployee(int employeeId)
         {
-            return new BindingList<ModelEmployee>(
-            RepositoryManager.RepositoryEmployee.GetListOfEmployees());
+            return RepositoryManager.RepositoryEmployee.GetEmployee(employeeId);
         }
 
-        public void DeleteEmplyee(ModelEmployee employee)
-        {
-            RepositoryManager.RepositoryEmployee.DeleteEmployee(employee.Id);
-        }
 
     }
 }

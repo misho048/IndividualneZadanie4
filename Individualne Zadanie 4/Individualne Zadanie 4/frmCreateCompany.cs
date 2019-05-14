@@ -22,10 +22,6 @@ namespace Individualne_Zadanie_4
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            if (cmbEmployees.Enabled == false)
-            {
-                _createCompanyViewModel.DeleteEmplyee((ModelEmployee)cmbEmployees.SelectedItem);
-            }
             DialogResult = DialogResult.Cancel;
         }
 
@@ -37,21 +33,19 @@ namespace Individualne_Zadanie_4
 
         private void frmCreateCompany_Load(object sender, EventArgs e)
         {
-            cmbEmployees.DataSource = _createCompanyViewModel.GetEmployees();
+
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmCreateEmployee createEmployee = new frmCreateEmployee();
-            createEmployee.ShowDialog();
-            if (createEmployee.DialogResult == DialogResult.OK)
+            frmEmployeesOverView employeesOverView = new frmEmployeesOverView(true);
+            employeesOverView.ShowDialog();
+            if (employeesOverView.DialogResult == DialogResult.OK)
             {
-                cmbEmployees.DataSource = _createCompanyViewModel.GetEmployees();
-                cmbEmployees.SelectedIndex = cmbEmployees.Items.Count - 1;
-                cmbEmployees.Enabled = false;
-                btnCreateBoss.Enabled = false;
-            }
+                ModelEmployee boss = _createCompanyViewModel.GetEmployee(employeesOverView.SelectedId);
+                lblBossName.Text = $"Boss Name: {boss.Title} {boss.Name} {boss.Surname}";
+        }
         }
     }
 }

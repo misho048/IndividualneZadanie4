@@ -11,13 +11,14 @@ namespace Logic
    public class Connections
     {
         private string DB_NAME = "CompanyOrganization";
-
+        
 
         public void SaveConnectionString(string connectionString)
         {
             Data.Properties.Settings.Default.ConnectionString = connectionString;
             Data.Properties.Settings.Default.Save();
         }
+
 
         public bool HasDatabase()
         {
@@ -38,7 +39,8 @@ namespace Logic
             scsb.InitialCatalog = initialCatalog;
             return scsb;
         }
-                     
+              
+        
         public SqlConnectionStringBuilder GetSqlConnectionStringBuilder()
         {
 

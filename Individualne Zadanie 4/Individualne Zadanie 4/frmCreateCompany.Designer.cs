@@ -34,9 +34,8 @@
             this.btnBack = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cmbEmployees = new System.Windows.Forms.ComboBox();
             this.btnCreateBoss = new System.Windows.Forms.Button();
+            this.lblBossName = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblChooseName
@@ -53,7 +52,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(22, 107);
+            this.label1.Location = new System.Drawing.Point(27, 107);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(161, 25);
             this.label1.TabIndex = 1;
@@ -99,25 +98,6 @@
             this.textBox2.Size = new System.Drawing.Size(188, 20);
             this.textBox2.TabIndex = 5;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.Location = new System.Drawing.Point(22, 180);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(158, 25);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Choose Boss:";
-            // 
-            // cmbEmployees
-            // 
-            this.cmbEmployees.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbEmployees.FormattingEnabled = true;
-            this.cmbEmployees.Location = new System.Drawing.Point(194, 180);
-            this.cmbEmployees.Name = "cmbEmployees";
-            this.cmbEmployees.Size = new System.Drawing.Size(188, 21);
-            this.cmbEmployees.TabIndex = 7;
-            // 
             // btnCreateBoss
             // 
             this.btnCreateBoss.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -125,18 +105,26 @@
             this.btnCreateBoss.Name = "btnCreateBoss";
             this.btnCreateBoss.Size = new System.Drawing.Size(355, 41);
             this.btnCreateBoss.TabIndex = 8;
-            this.btnCreateBoss.Text = "Create new Boss";
+            this.btnCreateBoss.Text = "Choose Boss";
             this.btnCreateBoss.UseVisualStyleBackColor = true;
             this.btnCreateBoss.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // lblBossName
+            // 
+            this.lblBossName.AutoSize = true;
+            this.lblBossName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.lblBossName.Location = new System.Drawing.Point(50, 168);
+            this.lblBossName.Name = "lblBossName";
+            this.lblBossName.Size = new System.Drawing.Size(0, 25);
+            this.lblBossName.TabIndex = 9;
             // 
             // frmCreateCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(425, 378);
+            this.Controls.Add(this.lblBossName);
             this.Controls.Add(this.btnCreateBoss);
-            this.Controls.Add(this.cmbEmployees);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btnBack);
@@ -161,8 +149,7 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox cmbEmployees;
         private System.Windows.Forms.Button btnCreateBoss;
+        private System.Windows.Forms.Label lblBossName;
     }
 }

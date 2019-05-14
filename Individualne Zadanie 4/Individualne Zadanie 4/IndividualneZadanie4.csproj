@@ -38,6 +38,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -50,7 +53,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CreateCompanyViewModel.cs" />
-    <Compile Include="CreateEmployeeViewModel.cs" />
+    <Compile Include="CreateEditEmployeeViewModel.cs" />
+    <Compile Include="EmployeesOverviewViewModel.cs" />
     <Compile Include="frmChooseCompany.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,11 +67,11 @@
     <Compile Include="frmCreateCompany.Designer.cs">
       <DependentUpon>frmCreateCompany.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCreateEmployee.cs">
+    <Compile Include="frmCreateEditEmployee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCreateEmployee.Designer.cs">
-      <DependentUpon>frmCreateEmployee.cs</DependentUpon>
+    <Compile Include="frmCreateEditEmployee.Designer.cs">
+      <DependentUpon>frmCreateEditEmployee.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDepartmentOverview.cs">
       <SubType>Form</SubType>
@@ -102,8 +106,8 @@
     <EmbeddedResource Include="frmCreateCompany.resx">
       <DependentUpon>frmCreateCompany.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCreateEmployee.resx">
-      <DependentUpon>frmCreateEmployee.cs</DependentUpon>
+    <EmbeddedResource Include="frmCreateEditEmployee.resx">
+      <DependentUpon>frmCreateEditEmployee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDepartmentOverview.resx">
       <DependentUpon>frmDepartmentOverview.cs</DependentUpon>

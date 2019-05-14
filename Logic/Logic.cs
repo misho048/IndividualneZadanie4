@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-   public static class Logic
+   public  class Logic
     {
-        public static bool CreateEmployee(string title, string name, string surname, string phoneNumber, string email, int? departmentId)
+        public  bool CreateEmployee(string title, string name, string surname, string phoneNumber, string email, int? departmentId)
         {
             ModelEmployee employee = new ModelEmployee
             {
@@ -25,5 +25,41 @@ namespace Logic
             return RepositoryManager.RepositoryEmployee.CreateEmployee(employee);
          
         }
+
+
+        public List<ModelEmployee> GetUnsignedEmployees()
+        {
+            List<ModelEmployee> myEntryList = new List<ModelEmployee>(RepositoryManager.RepositoryEmployee.GetListOfEmployees());
+            List<ModelEmployee> ret = new List<ModelEmployee>();
+            foreach( var item in myEntryList)
+            {
+                if (item.DepartmentId == null)
+                {
+                    ret.Add(item);
+                }
+            }
+            return ret;
+            
+        }
+
+
+        public bool UpdateEmployee(string title, string name, string surname, string phoneNumber, string email, int? departmentId, int id)
+        {
+            ModelEmployee employee = new ModelEmployee
+            {
+                Title = title,
+                Name = name,
+                Surname = surname,
+                PhoneNumber = phoneNumber,
+                Email = email,
+                DepartmentId = departmentId,
+                Id=id
+            };
+
+            return RepositoryManager.RepositoryEmployee.UpdateEmployee(employee);
+
+        }
+
+
     }
 }
