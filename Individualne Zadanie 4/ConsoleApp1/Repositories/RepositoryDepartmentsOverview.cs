@@ -14,7 +14,7 @@ namespace Data.Repositories
             {
                 command.CommandText = @"select d.*,e.Name,e.Surname 
                                         from Department as d
-                                        left join Employee as e on e.DepartmentId=d.Id
+                                        join Employee as e on e.Id=d.ManagerEmployeeId
                                         where d.SuperiorDepartmentId = @superiorDepId";
 
                 command.Parameters.Add("@superiorDepId", SqlDbType.Int).Value = superiorDepId;

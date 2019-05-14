@@ -31,7 +31,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.dGVOverview = new System.Windows.Forms.DataGridView();
-            this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVOverview)).BeginInit();
             this.SuspendLayout();
@@ -68,18 +67,6 @@
             this.dGVOverview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVOverview.Size = new System.Drawing.Size(567, 574);
             this.dGVOverview.TabIndex = 10;
-            this.dGVOverview.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVOverview_CellContentClick);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnEdit.Location = new System.Drawing.Point(597, 241);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(191, 53);
-            this.btnEdit.TabIndex = 14;
-            this.btnEdit.Text = "Edit";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -99,10 +86,10 @@
             this.ClientSize = new System.Drawing.Size(824, 631);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.dGVOverview);
             this.Name = "frmEmployeeOverview";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmEmployeesOverview";
             ((System.ComponentModel.ISupportInitialize)(this.dGVOverview)).EndInit();
             this.ResumeLayout(false);
@@ -114,7 +101,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.DataGridView dGVOverview;
-        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
     }
 }

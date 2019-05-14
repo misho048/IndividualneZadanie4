@@ -16,5 +16,20 @@ namespace Individualne_Zadanie_4
             return new BindingList<ModelDepartmentsOverview>
                 (RepositoryManager.RepositoryDepartmentsOverview.GetListofDepOverviews(superiorDepId));
         }
+
+        public ModelDepartment MakeDepartment(int id,string name, string code, 
+            int? superiorDepartmentId, int? managerEmployeeId)
+        {
+            ModelDepartment model = new ModelDepartment
+            {
+                Id = id,
+                Name = name,
+                Code = code,
+                DepartmentType = EnumDepartmentsType.DepartmentType.Department,
+                SuperiorDepartmentId = superiorDepartmentId,
+                ManagerEmployeeId = managerEmployeeId
+            };
+            return model;
+        }
     }
 }

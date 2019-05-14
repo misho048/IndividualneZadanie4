@@ -23,7 +23,7 @@ namespace Individualne_Zadanie_4
 
         private void btnCreateCompany_Click(object sender, EventArgs e)
         {
-            frmCreateDepartment createCompany = new frmCreateDepartment(EnumDepartmentsType.DepartmentType.Company);
+            frmCreateEditDepartment createCompany = new frmCreateEditDepartment(EnumDepartmentsType.DepartmentType.Company);
             createCompany.ShowDialog();
             if (createCompany.DialogResult == DialogResult.OK)
             {

@@ -52,22 +52,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateDepartmentViewModel.cs" />
+    <Compile Include="CreateEditDepartmentViewModel.cs" />
     <Compile Include="CreateEditEmployeeViewModel.cs" />
     <Compile Include="DepartmentsViewModel.cs" />
     <Compile Include="EmployeeOverviewViewModel.cs" />
-    <Compile Include="EmployeesOverviewViewModel.cs" />
+    <Compile Include="EmployeesEditViewModel.cs" />
     <Compile Include="frmChooseCompany.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmChooseCompany.Designer.cs">
       <DependentUpon>frmChooseCompany.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCreateDepartment.cs">
+    <Compile Include="frmCreateEditDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCreateDepartment.Designer.cs">
-      <DependentUpon>frmCreateDepartment.cs</DependentUpon>
+    <Compile Include="frmCreateEditDepartment.Designer.cs">
+      <DependentUpon>frmCreateEditDepartment.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCreateEditEmployee.cs">
       <SubType>Form</SubType>
@@ -87,11 +87,11 @@
     <Compile Include="frmDivisionOverview.Designer.cs">
       <DependentUpon>frmDivisionOverview.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEmployeeEdit.cs">
+    <Compile Include="frmEmployeesEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEmployeeEdit.Designer.cs">
-      <DependentUpon>frmEmployeeEdit.cs</DependentUpon>
+    <Compile Include="frmEmployeesEdit.Designer.cs">
+      <DependentUpon>frmEmployeesEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEmployeeOverview.cs">
       <SubType>Form</SubType>
@@ -111,8 +111,8 @@
     <EmbeddedResource Include="frmChooseCompany.resx">
       <DependentUpon>frmChooseCompany.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCreateDepartment.resx">
-      <DependentUpon>frmCreateDepartment.cs</DependentUpon>
+    <EmbeddedResource Include="frmCreateEditDepartment.resx">
+      <DependentUpon>frmCreateEditDepartment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCreateEditEmployee.resx">
       <DependentUpon>frmCreateEditEmployee.cs</DependentUpon>
@@ -123,8 +123,8 @@
     <EmbeddedResource Include="frmDivisionOverview.resx">
       <DependentUpon>frmDivisionOverview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEmployeeEdit.resx">
-      <DependentUpon>frmEmployeeEdit.cs</DependentUpon>
+    <EmbeddedResource Include="frmEmployeesEdit.resx">
+      <DependentUpon>frmEmployeesEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmployeeOverview.resx">
       <DependentUpon>frmEmployeeOverview.cs</DependentUpon>

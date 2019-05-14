@@ -78,5 +78,20 @@ namespace Logic
             
         }
 
+
+        public bool UpdateDepartment (string name, string code, int? managerId, EnumDepartmentsType.DepartmentType departmentType,
+            int? superiorDepartmentId,int id)
+        {
+            ModelDepartment department = new ModelDepartment
+            {
+                Id=id,
+                Name = name,
+                Code = code,
+                SuperiorDepartmentId = superiorDepartmentId,
+                ManagerEmployeeId = managerId,
+                DepartmentType = departmentType
+            };
+            return RepositoryManager.RepositoryDepartment.UpdateDepartment(department);
+        }
     }
 }

@@ -36,6 +36,34 @@ namespace Data.Repositories
         }
 
 
+        public bool UpdateDepartment(ModelDepartment department)
+        {
+            bool isSuccessful = false;
+            RepositoryManager.ExecuteSqlCommand((command) =>
+            {
+
+                command.CommandText = @"update Department
+                                        set Name=@Name,Code=@Code,DepartmentType=@DepartmentType,
+                                            SuperiorDepartmentId=@SuperiorDepartmentId, ManagerEmployeeId=@ManagerEmpoyeeId
+                                        where Id=@Id";
+
+                command.Parameters.Add("@SuperiorDepartmentId", SqlDbType.Int).Value = department.SuperiorDepartmentId ?? (Object)DBNull.Value;
+                command.Parameters.Add("@Name", SqlDbType.NVarChar).Value = department.Name;
+                command.Parameters.Add("@Code", SqlDbType.NVarChar).Value = department.Code;
+                command.Parameters.Add("@DepartmentType", SqlDbType.NVarChar).Value = department.DepartmentType.ToString();
+                command.Parameters.Add("@ManagerEmpoyeeId", SqlDbType.Int).Value = department.ManagerEmployeeId ?? (Object)DBNull.Value;
+                command.Parameters.Add("@Id", SqlDbType.Int).Value = department.Id;
+
+                if (command.ExecuteNonQuery() > 0)
+                {
+                    isSuccessful = true;
+                }
+
+            });
+            return isSuccessful;
+        }
+
+
         public List<ModelDepartment> GetListOfDepartments(EnumDepartmentsType.DepartmentType departmentType)
         {
             List<ModelDepartment> myListOfCompanies = new List<ModelDepartment>();

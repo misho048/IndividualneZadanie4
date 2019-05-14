@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace Individualne_Zadanie_4
 {
-    public partial class frmEmployeesOverView : Form
+    public partial class frmEmployeesEdit : Form
     {
         #region fields
-        private EmployeesOverviewViewModel _employeesOverviewViewModel = new EmployeesOverviewViewModel();
+        private EmployeesEditViewModel _employeesOverviewViewModel = new EmployeesEditViewModel();
 
         private bool _makeCollumns = true;
         #endregion
@@ -26,12 +26,12 @@ namespace Individualne_Zadanie_4
 
 
         #region formEvents and buttonEvents
-        public frmEmployeesOverView()
+        public frmEmployeesEdit()
         { 
             InitializeComponent();
         }
                 
-        private void btnAllEmployees_Click(object sender, EventArgs e)
+         private void btnAllEmployees_Click(object sender, EventArgs e)
         {
             LoadDGV(true);
         }

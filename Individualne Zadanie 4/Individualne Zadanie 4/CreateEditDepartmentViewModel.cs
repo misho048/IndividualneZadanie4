@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Individualne_Zadanie_4
 {
-    class CreateDepartmentViewModel
+    class CreateEditDepartmentViewModel
     {
         private Logic.Logic _logic = new Logic.Logic(); 
 
@@ -28,7 +28,14 @@ namespace Individualne_Zadanie_4
         }
 
 
-        public void SetDepartmentForEmployee(int employeeid, int departmentID)
+        public bool UpdateDepartment (string name,string code, int? managerId,
+            EnumDepartmentsType.DepartmentType departmentType,int? superiorDepartmentId,int id)
+        {
+            return _logic.UpdateDepartment(name, code, managerId, departmentType, superiorDepartmentId,id);
+        }
+
+
+        public void SetDepartmentForEmployee(int employeeid, int? departmentID)
         {
             RepositoryManager.RepositoryEmployee.SetDepartmentForEmployee(employeeid, departmentID);
         }

@@ -44,6 +44,7 @@
             this.dGVOverview.Location = new System.Drawing.Point(12, 33);
             this.dGVOverview.Name = "dGVOverview";
             this.dGVOverview.ReadOnly = true;
+            this.dGVOverview.RowHeadersVisible = false;
             this.dGVOverview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dGVOverview.Size = new System.Drawing.Size(567, 562);
             this.dGVOverview.TabIndex = 0;
@@ -79,6 +80,7 @@
             this.btnEdit.TabIndex = 7;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnDelete
             // 
@@ -120,12 +122,11 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dGVOverview;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnCreate;
+        private System.Windows.Forms.DataGridView dGVOverview;
     }
 }

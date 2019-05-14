@@ -17,5 +17,10 @@ namespace Individualne_Zadanie_4
                 RepositoryManager.RepositoryEmployee.GetListOfEmployeesByDepartment(departmentId));
         }
 
+        public void SetDepartmentForEmployee(int employeeId,int? departmentId)
+        {
+            RepositoryManager.RepositoryEmployee.SetDepartmentForEmployee(employeeId, departmentId);
+        }
+
     }
 }

@@ -30,11 +30,22 @@ namespace Individualne_Zadanie_4
             dGVOverview.Columns["SuperiorDepartmentId"].Visible = false;
             dGVOverview.Columns["ManagerEmployeeId"].Visible = false;
 
+            if (dGVOverview.Rows.Count == 1)
+            {
+                btnSelect.Enabled = false;
+                btnEdit.Enabled = false;
+            }
+            else
+            {
+                btnSelect.Enabled = true;
+                btnEdit.Enabled = true;
+            }
+
         }
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            frmCreateDepartment createDepartment = new frmCreateDepartment(EnumDepartmentsType.DepartmentType.Project, _superiorDepId);
+            frmCreateEditDepartment createDepartment = new frmCreateEditDepartment(EnumDepartmentsType.DepartmentType.Project, _superiorDepId);
             createDepartment.ShowDialog();
             if (createDepartment.DialogResult == DialogResult.OK)
             {
@@ -55,6 +66,18 @@ namespace Individualne_Zadanie_4
                 frmDepartmentOverview.ShowDialog();
 
             }
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            frmCreateEditDepartment frmCreateEditDepartment = new frmCreateEditDepartment(
+               _departmentsViewModel.MakeDepartment((int)dGVOverview.CurrentRow.Cells["Id"].Value, (string)dGVOverview.CurrentRow.Cells["Name"].Value,
+               (string)dGVOverview.CurrentRow.Cells["Code"].Value, (int?)dGVOverview.CurrentRow.Cells["SuperiorDepartmentId"].Value,
+               (int?)dGVOverview.CurrentRow.Cells["ManagerEmployeeId"].Value));
+
+
+            frmCreateEditDepartment.ShowDialog();
+            FillDGV();
         }
     }
 }

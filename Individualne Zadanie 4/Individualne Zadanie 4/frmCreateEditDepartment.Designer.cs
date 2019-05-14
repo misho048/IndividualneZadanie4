@@ -1,6 +1,6 @@
 ﻿namespace Individualne_Zadanie_4
 {
-    partial class frmCreateDepartment
+    partial class frmCreateEditDepartment
     {
         /// <summary>
         /// Required designer variable.

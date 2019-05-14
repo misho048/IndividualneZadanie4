@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Individualne_Zadanie_4
 {
-    class EmployeesOverviewViewModel
+    class EmployeesEditViewModel
     {
         private Logic.Logic _logic = new Logic.Logic();
 

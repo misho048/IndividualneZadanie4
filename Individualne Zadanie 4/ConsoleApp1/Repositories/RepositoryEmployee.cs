@@ -93,7 +93,7 @@ namespace Data.Repositories
         }
 
 
-        public void SetDepartmentForEmployee(int employeeId, int departmentId)
+        public void SetDepartmentForEmployee(int employeeId, int? departmentId)
         {
             RepositoryManager.ExecuteSqlCommand((command) =>
             {
@@ -102,7 +102,7 @@ namespace Data.Repositories
                                            where Id = @Id";
 
                 command.Parameters.Add("@Id", SqlDbType.Int).Value = employeeId;
-                command.Parameters.Add("@DepartmentId", SqlDbType.Int).Value = departmentId;
+                command.Parameters.Add("@DepartmentId", SqlDbType.Int).Value = departmentId ?? (object)DBNull.Value;
                 command.ExecuteNonQuery();
             });
 
