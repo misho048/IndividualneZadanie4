@@ -52,6 +52,16 @@ namespace Individualne_Zadanie_4
             dGVOverview.Columns["Id"].Visible = false;
             dGVOverview.Columns["DepartmentId"].Visible = false;
 
+            if (dGVOverview.Rows.Count == 1)
+            {
+                btnDelete.Enabled = false;
+
+            }
+            else
+            {
+                btnDelete.Enabled = true;
+            }
+
         }
     }
 }

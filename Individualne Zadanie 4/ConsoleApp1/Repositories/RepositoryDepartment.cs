@@ -133,6 +133,42 @@ namespace Data.Repositories
         }
 
 
+        public bool DeleteDepartment(int departmentId)
+        {
+            bool isSuccessful = false;
+            RepositoryManager.ExecuteSqlCommand((command) =>
+            {
+
+                command.CommandText = @"delete from Department 
+                                        where Id=@Id";
+
+                command.Parameters.Add("@Id", SqlDbType.Int).Value = departmentId;
+
+                if (command.ExecuteNonQuery() > 0)
+                {
+                    isSuccessful = true;
+                }
+
+            });
+            return isSuccessful;
+        }
+
+
+        public int GetNumberOfInferiorDepartments(int departmentId)
+        {
+            int ret = 0;
+            RepositoryManager.ExecuteSqlCommand((command) =>
+            {
+                command.CommandText = @"select count(*)
+                                        from Department
+                                        where SuperiorDepartmentId =@departmentId";
+                command.Parameters.Add("@departmentId", SqlDbType.Int).Value = departmentId;m
+                ret = (int)command.ExecuteScalar();
+            });
+            return ret;
+        }
+
+
         
     }
 }

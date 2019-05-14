@@ -101,9 +101,9 @@ namespace Individualne_Zadanie_4
         private bool CheckCorrectInput()
         {
 
-            if ((txtBoxName.Text.ToString().Length < 3) || (txtBoxName.Text.ToString().Any(char.IsDigit)) ||
-                (txtBoxSurname.Text.ToString().Length < 3) || (txtBoxSurname.Text.ToString().Any(char.IsDigit)) ||
-                (txtBoxEmail.Text.ToString().Length < 3))
+            if ((txtBoxName.Text.Length < 3) || (txtBoxName.Text.Any(char.IsDigit)) ||
+                (txtBoxSurname.Text.Length < 3) || (txtBoxSurname.Text.Any(char.IsDigit)) ||
+                (txtBoxEmail.Text.Length < 3))
             {
                 return false;
             }

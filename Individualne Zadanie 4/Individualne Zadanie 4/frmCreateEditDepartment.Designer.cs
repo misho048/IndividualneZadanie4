@@ -135,7 +135,6 @@
             this.Name = "frmCreateDepartment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmCreateCompany";
-            this.Load += new System.EventHandler(this.frmCreateCompany_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

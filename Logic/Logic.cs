@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Logic
 {
-   public  class Logic
+    public class Logic
     {
-        public  bool CreateEmployee(string title, string name, string surname, string phoneNumber, string email, int? departmentId)
+        public bool CreateEmployee(string title, string name, string surname, string phoneNumber, string email, int? departmentId)
         {
             ModelEmployee employee = new ModelEmployee
             {
@@ -23,7 +23,7 @@ namespace Logic
             };
 
             return RepositoryManager.RepositoryEmployee.CreateEmployee(employee);
-         
+
         }
 
 
@@ -31,7 +31,7 @@ namespace Logic
         {
             List<ModelEmployee> myEntryList = new List<ModelEmployee>(RepositoryManager.RepositoryEmployee.GetListOfEmployees());
             List<ModelEmployee> ret = new List<ModelEmployee>();
-            foreach( var item in myEntryList)
+            foreach (var item in myEntryList)
             {
                 if (item.DepartmentId == null)
                 {
@@ -39,7 +39,7 @@ namespace Logic
                 }
             }
             return ret;
-            
+
         }
 
 
@@ -53,7 +53,7 @@ namespace Logic
                 PhoneNumber = phoneNumber,
                 Email = email,
                 DepartmentId = departmentId,
-                Id=id
+                Id = id
             };
 
             return RepositoryManager.RepositoryEmployee.UpdateEmployee(employee);
@@ -62,7 +62,7 @@ namespace Logic
 
 
         public bool CreateDepartment(string name, string code, EnumDepartmentsType.DepartmentType departmentType,
-            int? managerId,int? superiorDepartmentId)
+            int? managerId, int? superiorDepartmentId)
         {
             ModelDepartment department = new ModelDepartment
             {
@@ -75,16 +75,16 @@ namespace Logic
 
 
             return RepositoryManager.RepositoryDepartment.CreateDepartment(department);
-            
+
         }
 
 
-        public bool UpdateDepartment (string name, string code, int? managerId, EnumDepartmentsType.DepartmentType departmentType,
-            int? superiorDepartmentId,int id)
+        public bool UpdateDepartment(string name, string code, int? managerId, EnumDepartmentsType.DepartmentType departmentType,
+            int? superiorDepartmentId, int id)
         {
             ModelDepartment department = new ModelDepartment
             {
-                Id=id,
+                Id = id,
                 Name = name,
                 Code = code,
                 SuperiorDepartmentId = superiorDepartmentId,
@@ -92,6 +92,24 @@ namespace Logic
                 DepartmentType = departmentType
             };
             return RepositoryManager.RepositoryDepartment.UpdateDepartment(department);
+        }
+
+
+        public bool DeleteHigherDepartment(ModelDepartment department)
+        {
+            if (RepositoryManager.RepositoryDepartment.GetNumberOfInferiorDepartments(department.Id) != 0)
+            {
+                return false;
+            }
+            else
+            {
+                RepositoryManager.RepositoryEmployee.SetDepartmentForEmployee((int)department.ManagerEmployeeId, null);
+                if (RepositoryManager.RepositoryDepartment.DeleteDepartment(department.Id))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

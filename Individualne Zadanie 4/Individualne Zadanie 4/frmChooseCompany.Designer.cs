@@ -33,6 +33,8 @@
             this.btnConfirm = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnCreateCompany = new System.Windows.Forms.Button();
+            this.btnEditCompany = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // cmbCompanies
@@ -40,7 +42,7 @@
             this.cmbCompanies.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbCompanies.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.cmbCompanies.FormattingEnabled = true;
-            this.cmbCompanies.Location = new System.Drawing.Point(23, 164);
+            this.cmbCompanies.Location = new System.Drawing.Point(23, 290);
             this.cmbCompanies.Name = "cmbCompanies";
             this.cmbCompanies.Size = new System.Drawing.Size(299, 33);
             this.cmbCompanies.TabIndex = 0;
@@ -49,7 +51,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(125, 127);
+            this.label1.Location = new System.Drawing.Point(125, 250);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(197, 25);
             this.label1.TabIndex = 1;
@@ -58,7 +60,7 @@
             // btnConfirm
             // 
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnConfirm.Location = new System.Drawing.Point(23, 222);
+            this.btnConfirm.Location = new System.Drawing.Point(23, 338);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(149, 59);
             this.btnConfirm.TabIndex = 2;
@@ -69,7 +71,7 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button2.Location = new System.Drawing.Point(175, 222);
+            this.button2.Location = new System.Drawing.Point(175, 338);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(147, 59);
             this.button2.TabIndex = 3;
@@ -88,11 +90,35 @@
             this.btnCreateCompany.UseVisualStyleBackColor = true;
             this.btnCreateCompany.Click += new System.EventHandler(this.btnCreateCompany_Click);
             // 
+            // btnEditCompany
+            // 
+            this.btnEditCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnEditCompany.Location = new System.Drawing.Point(23, 95);
+            this.btnEditCompany.Name = "btnEditCompany";
+            this.btnEditCompany.Size = new System.Drawing.Size(299, 44);
+            this.btnEditCompany.TabIndex = 5;
+            this.btnEditCompany.Text = "Edit Company";
+            this.btnEditCompany.UseVisualStyleBackColor = true;
+            this.btnEditCompany.Click += new System.EventHandler(this.btnEditCompany_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDelete.Location = new System.Drawing.Point(23, 186);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(299, 44);
+            this.btnDelete.TabIndex = 6;
+            this.btnDelete.Text = "Delete Company";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // frmChooseCompany
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(356, 304);
+            this.ClientSize = new System.Drawing.Size(386, 409);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEditCompany);
             this.Controls.Add(this.btnCreateCompany);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnConfirm);
@@ -114,6 +140,8 @@
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnCreateCompany;
+        private System.Windows.Forms.Button btnEditCompany;
+        private System.Windows.Forms.Button btnDelete;
     }
 }
 

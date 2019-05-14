@@ -44,11 +44,7 @@ namespace Individualne_Zadanie_4
 
         private void frmChooseCompany_Load(object sender, EventArgs e)
         {
-            
-            if (!_connections.HasDatabase())
-            {
-            _chooseCompanyViewModel.CheckConnection();
-            }
+
             fillCmb();
         }
 
@@ -56,6 +52,27 @@ namespace Individualne_Zadanie_4
         private void fillCmb()
         {
             cmbCompanies.DataSource = _chooseCompanyViewModel.GetCompanies();
+        }
+
+        private void btnEditCompany_Click(object sender, EventArgs e)
+        {
+            frmCreateEditDepartment frmCreateEditDepartment = new frmCreateEditDepartment((ModelDepartment)cmbCompanies.SelectedItem);
+            frmCreateEditDepartment.ShowDialog();
+            fillCmb();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (_chooseCompanyViewModel.DeleteCompany((ModelDepartment)cmbCompanies.SelectedItem))
+            {
+                fillCmb();
+           
+            }
+            else
+            {
+                MessageBox.Show("Cannot delete Company\n" +
+               "First delete divisions");
+            }
         }
     }
 }

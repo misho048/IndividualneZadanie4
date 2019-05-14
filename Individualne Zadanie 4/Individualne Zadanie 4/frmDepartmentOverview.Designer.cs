@@ -33,6 +33,7 @@
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGVOverview)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,11 +92,23 @@
             this.btnSelect.UseVisualStyleBackColor = true;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnDelete.Location = new System.Drawing.Point(598, 329);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(191, 53);
+            this.btnDelete.TabIndex = 28;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // frmDepartmentOverview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 599);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnSelect);
@@ -114,5 +127,6 @@
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

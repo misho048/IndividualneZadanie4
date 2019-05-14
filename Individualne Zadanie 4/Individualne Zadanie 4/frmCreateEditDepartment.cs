@@ -6,12 +6,15 @@ namespace Individualne_Zadanie_4
 {
     public partial class frmCreateEditDepartment : Form
     {
+        #region fields
         private CreateEditDepartmentViewModel _createEditDepartmentViewModel = new CreateEditDepartmentViewModel();
         private int _bossId;
         private int? _superiorDepId = null;
         private ModelDepartment _department = null;
         private EnumDepartmentsType.DepartmentType _departmentType;
+        #endregion
 
+        #region Constructors
         public frmCreateEditDepartment(EnumDepartmentsType.DepartmentType departmentType)
         {
             InitializeComponent();
@@ -35,8 +38,9 @@ namespace Individualne_Zadanie_4
             _department = department;
             FillTxtBoxes();
         }
+        #endregion
 
-
+        #region btnClickEvents
         private void btnBack_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
@@ -45,7 +49,7 @@ namespace Individualne_Zadanie_4
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            if (!lblBossName.Equals("") || (txtBoxCode.Text.ToString().Length<2) || (txtBoxName.Text.ToString().Length<3))
+            if ((lblBossName.Text.Length > 2) && (txtBoxCode.Text.Length > 2) && (txtBoxName.Text.Length > 3))
             {
                 if (_department == null)
                 {
@@ -81,13 +85,6 @@ namespace Individualne_Zadanie_4
         }
 
 
-        private void frmCreateCompany_Load(object sender, EventArgs e)
-        {
-
-
-        }
-
-
         private void button1_Click(object sender, EventArgs e)
         {
             frmEmployeesEdit employeesOverView = new frmEmployeesEdit();
@@ -96,7 +93,7 @@ namespace Individualne_Zadanie_4
             {
                 _createEditDepartmentViewModel.SetDepartmentForEmployee((int)_department.ManagerEmployeeId, null);
                 lblBossName.Text = "";
-                
+
             }
             employeesOverView.ShowDialog();
 
@@ -114,7 +111,7 @@ namespace Individualne_Zadanie_4
                 btnConfirm.Enabled = true;
             }
         }
-
+        #endregion
 
         private void FillTxtBoxes()
         {

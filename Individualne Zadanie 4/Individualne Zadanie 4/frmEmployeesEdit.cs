@@ -30,8 +30,8 @@ namespace Individualne_Zadanie_4
         { 
             InitializeComponent();
         }
-                
-         private void btnAllEmployees_Click(object sender, EventArgs e)
+      
+        private void btnAllEmployees_Click(object sender, EventArgs e)
         {
             LoadDGV(true);
         }
