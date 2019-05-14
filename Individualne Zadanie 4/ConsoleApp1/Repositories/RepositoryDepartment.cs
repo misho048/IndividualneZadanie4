@@ -162,7 +162,7 @@ namespace Data.Repositories
                 command.CommandText = @"select count(*)
                                         from Department
                                         where SuperiorDepartmentId =@departmentId";
-                command.Parameters.Add("@departmentId", SqlDbType.Int).Value = departmentId;m
+                command.Parameters.Add("@departmentId", SqlDbType.Int).Value = departmentId;
                 ret = (int)command.ExecuteScalar();
             });
             return ret;

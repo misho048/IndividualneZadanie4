@@ -7,7 +7,7 @@ namespace Individualne_Zadanie_4
 {
     public partial class frmChooseCompany : Form
     {
-        private Connections _connections = new Connections();
+
         private ChooseCompanyViewModel _chooseCompanyViewModel = new ChooseCompanyViewModel();
 
 
