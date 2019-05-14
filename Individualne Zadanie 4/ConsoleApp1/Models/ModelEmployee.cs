@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Data.Models
+﻿namespace Data.Models
 {
-     public class ModelEmployee
+    public class ModelEmployee
     {
         public int Id { get; set; }
         public string Title { get; set; }

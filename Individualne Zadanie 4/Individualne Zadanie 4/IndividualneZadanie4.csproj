@@ -52,8 +52,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CreateCompanyViewModel.cs" />
+    <Compile Include="CreateDepartmentViewModel.cs" />
     <Compile Include="CreateEditEmployeeViewModel.cs" />
+    <Compile Include="DepartmentsViewModel.cs" />
+    <Compile Include="EmployeeOverviewViewModel.cs" />
     <Compile Include="EmployeesOverviewViewModel.cs" />
     <Compile Include="frmChooseCompany.cs">
       <SubType>Form</SubType>
@@ -61,11 +63,11 @@
     <Compile Include="frmChooseCompany.Designer.cs">
       <DependentUpon>frmChooseCompany.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCreateCompany.cs">
+    <Compile Include="frmCreateDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCreateCompany.Designer.cs">
-      <DependentUpon>frmCreateCompany.cs</DependentUpon>
+    <Compile Include="frmCreateDepartment.Designer.cs">
+      <DependentUpon>frmCreateDepartment.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCreateEditEmployee.cs">
       <SubType>Form</SubType>
@@ -85,11 +87,17 @@
     <Compile Include="frmDivisionOverview.Designer.cs">
       <DependentUpon>frmDivisionOverview.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEmployeesOverView.cs">
+    <Compile Include="frmEmployeeEdit.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEmployeesOverView.Designer.cs">
-      <DependentUpon>frmEmployeesOverView.cs</DependentUpon>
+    <Compile Include="frmEmployeeEdit.Designer.cs">
+      <DependentUpon>frmEmployeeEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmployeeOverview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmployeeOverview.Designer.cs">
+      <DependentUpon>frmEmployeeOverview.cs</DependentUpon>
     </Compile>
     <Compile Include="frmProjectsOverview.cs">
       <SubType>Form</SubType>
@@ -103,8 +111,8 @@
     <EmbeddedResource Include="frmChooseCompany.resx">
       <DependentUpon>frmChooseCompany.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCreateCompany.resx">
-      <DependentUpon>frmCreateCompany.cs</DependentUpon>
+    <EmbeddedResource Include="frmCreateDepartment.resx">
+      <DependentUpon>frmCreateDepartment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCreateEditEmployee.resx">
       <DependentUpon>frmCreateEditEmployee.cs</DependentUpon>
@@ -115,8 +123,11 @@
     <EmbeddedResource Include="frmDivisionOverview.resx">
       <DependentUpon>frmDivisionOverview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEmployeesOverView.resx">
-      <DependentUpon>frmEmployeesOverView.cs</DependentUpon>
+    <EmbeddedResource Include="frmEmployeeEdit.resx">
+      <DependentUpon>frmEmployeeEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmployeeOverview.resx">
+      <DependentUpon>frmEmployeeOverview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmProjectsOverview.resx">
       <DependentUpon>frmProjectsOverview.cs</DependentUpon>

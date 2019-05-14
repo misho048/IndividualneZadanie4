@@ -1,32 +1,24 @@
 ﻿
 using Data.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 
 namespace Data.Repositories
 {
-    public  class RepositoryEmployee
+    public class RepositoryEmployee
     {
 
-        public bool CreateEmployee (ModelEmployee employee)
+        public bool CreateEmployee(ModelEmployee employee)
         {
             bool isSuccessful = false;
             RepositoryManager.ExecuteSqlCommand((command) =>
             {
-                if (employee.DepartmentId == null)
-                {
-                    command.CommandText = @"insert into [dbo].[Employee]
-                        values (@Title,@Name,@Surname,@PhoneNumber,@Mail,null)";
-                }
-                else
-                {
-
-                    command.CommandText = @"insert into [dbo].[Employee]
+                command.CommandText = @"insert into [dbo].[Employee]
                         values (@Title,@Name,@Surname,@PhoneNumber,@Mail,@DepartmentID)";
-                    command.Parameters.Add("@DepartmentID", SqlDbType.Int).Value = employee.DepartmentId;
-                }
 
+                command.Parameters.Add("@DepartmentID", SqlDbType.Int).Value = employee.DepartmentId ?? (Object)DBNull.Value;
                 command.Parameters.Add("@Title", SqlDbType.NVarChar).Value = employee.Title;
                 command.Parameters.Add("@Name", SqlDbType.NVarChar).Value = employee.Name;
                 command.Parameters.Add("@Surname", SqlDbType.NVarChar).Value = employee.Surname;
@@ -44,12 +36,16 @@ namespace Data.Repositories
         }
 
 
-        public List<ModelEmployee> GetListOfEmployees() {
+        public List<ModelEmployee> GetListOfEmployees()
+        {
 
-        List<ModelEmployee> myListOfEmployees = new List<ModelEmployee>();
+            List<ModelEmployee> myListOfEmployees = new List<ModelEmployee>();
             RepositoryManager.ExecuteSqlCommand((command) =>
             {
-                command.CommandText = @"select * from [dbo].[Employee]";
+                command.CommandText = @"select e.* 
+                                        from Employee as e
+                                        left join Department as d on e.DepartmentId=d.Id 
+                                        where e.DepartmentId is null or not (e.DepartmentId = d.Id and d.DepartmentType='Company') ";
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -63,22 +59,22 @@ namespace Data.Repositories
                         employee.Email = reader.GetString(5);
                         employee.DepartmentId = reader.IsDBNull(6) ? null : (int?)reader.GetInt32(6);
                         myListOfEmployees.Add(employee);
-                        
+
                     }
                 }
 
             });
-            return myListOfEmployees;     
+            return myListOfEmployees;
 
         }
-        
 
-        public bool DeleteEmployee (int employeeId)
+
+        public bool DeleteEmployee(int employeeId)
         {
             bool isSuccessful = false;
             RepositoryManager.ExecuteSqlCommand((command) =>
             {
-               command.CommandText= @"update [dbo].[Employee]
+                command.CommandText = @"update [dbo].[Employee]
                                            set DepartmentId=null
                                            where Id = @Id
                                            delete from [dbo].[Employee]
@@ -97,19 +93,20 @@ namespace Data.Repositories
         }
 
 
-        public void SetDepartmentForEmployee(int employeeId,int departmentId)
+        public void SetDepartmentForEmployee(int employeeId, int departmentId)
         {
             RepositoryManager.ExecuteSqlCommand((command) =>
             {
-            command.CommandText = @"update [dbo].[Employee]
+                command.CommandText = @"update [dbo].[Employee]
                                            set DepartmentId=@DepartmentId
-                                           where Id = @Id";  
+                                           where Id = @Id";
 
                 command.Parameters.Add("@Id", SqlDbType.Int).Value = employeeId;
+                command.Parameters.Add("@DepartmentId", SqlDbType.Int).Value = departmentId;
                 command.ExecuteNonQuery();
             });
 
-        }       
+        }
 
 
         public ModelEmployee GetEmployee(int employeeId)
@@ -124,11 +121,11 @@ namespace Data.Repositories
 
                 command.Parameters.Add("@Id", SqlDbType.Int).Value = employeeId;
 
-               using(SqlDataReader reader = command.ExecuteReader())
+                using (SqlDataReader reader = command.ExecuteReader())
                 {
                     if (reader.Read())
                     {
-                        
+
                         employee.Id = reader.GetInt32(0);
                         employee.Title = reader.IsDBNull(1) ? "" : reader.GetString(1);
                         employee.Name = reader.GetString(2);
@@ -139,14 +136,14 @@ namespace Data.Repositories
                     }
                 }
 
-               
+
             });
             return employee;
 
         }
 
 
-        public bool UpdateEmployee (ModelEmployee employee)
+        public bool UpdateEmployee(ModelEmployee employee)
         {
             bool isSuccessful = false;
             RepositoryManager.ExecuteSqlCommand((command) =>
@@ -183,6 +180,39 @@ namespace Data.Repositories
             });
 
             return isSuccessful;
+        }
+
+
+        public List<ModelEmployee> GetListOfEmployeesByDepartment(int departmentId)
+        {
+
+            List<ModelEmployee> myListOfEmployees = new List<ModelEmployee>();
+            RepositoryManager.ExecuteSqlCommand((command) =>
+            {
+                command.CommandText = @"select * from Employee 
+                                        where DepartmentId = @DepartmentId ";
+                command.Parameters.Add("@DepartmentId",SqlDbType.Int).Value= departmentId;
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        ModelEmployee employee = new ModelEmployee();
+                        employee.Id = reader.GetInt32(0);
+                        employee.Title = reader.IsDBNull(1) ? "" : reader.GetString(1);
+                        employee.Name = reader.GetString(2);
+                        employee.Surname = reader.GetString(3);
+                        employee.PhoneNumber = reader.IsDBNull(4) ? "" : reader.GetString(4);
+                        employee.Email = reader.GetString(5);
+                        employee.DepartmentId = reader.IsDBNull(6) ? null : (int?)reader.GetInt32(6);
+                        myListOfEmployees.Add(employee);
+
+                    }
+                }
+
+            });
+            return myListOfEmployees;
+
         }
     }
 }

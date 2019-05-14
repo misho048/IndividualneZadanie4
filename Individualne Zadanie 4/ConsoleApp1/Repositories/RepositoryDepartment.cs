@@ -3,9 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 
@@ -14,24 +11,25 @@ namespace Data.Repositories
     public class RepositoryDepartment
     {
 
-        public bool CreateDepartment(ModelDepartment department, ModelEmployee employee)
+        public bool CreateDepartment(ModelDepartment department)
         {
             bool isSuccessful = false;
             RepositoryManager.ExecuteSqlCommand((command) =>
             {
+
                 command.CommandText = @"insert into  [dbo].[Department] 
-                                       values (@Name,@Code,@DepartmentType,null,@manager)";
+                                       values (@Name,@Code,@DepartmentType,@SuperiorDepartmentId,@ManagerId)";
 
-
+                command.Parameters.Add("@SuperiorDepartmentId", SqlDbType.Int).Value = department.SuperiorDepartmentId ?? (Object)DBNull.Value;
                 command.Parameters.Add("@Name", SqlDbType.NVarChar).Value = department.Name;
                 command.Parameters.Add("@Code", SqlDbType.NVarChar).Value = department.Code;
-                command.Parameters.Add("@DepartmentType", SqlDbType.NVarChar).Value = EnumDepartmentsType.DepartmentType.Company;
+                command.Parameters.Add("@DepartmentType", SqlDbType.NVarChar).Value = department.DepartmentType.ToString();
+                command.Parameters.Add("@ManagerId", SqlDbType.Int).Value = department.ManagerEmployeeId ?? (Object)DBNull.Value;
 
                 if (command.ExecuteNonQuery() > 0)
                 {
                     isSuccessful = true;
                 }
-
 
             });
             return isSuccessful;
@@ -55,7 +53,7 @@ namespace Data.Repositories
                         company.Name = reader.GetString(1);
                         company.Code = reader.GetString(2);
                         company.DepartmentType = departmentType;
-                        company.SuperiorDepartment = reader.IsDBNull(4) ? null : (int?)reader.GetInt32(4);
+                        company.SuperiorDepartmentId = reader.IsDBNull(4) ? null : (int?)reader.GetInt32(4);
                         company.ManagerEmployeeId = reader.IsDBNull(5) ? null : (int?)reader.GetInt32(5);
                         myListOfCompanies.Add(company);
                     }
@@ -93,5 +91,20 @@ namespace Data.Repositories
             return ret;
         }
 
+
+        public int GetLastAddedDepartmentId()
+        {
+            int ret = 0;
+            RepositoryManager.ExecuteSqlCommand((command) =>
+            {
+                command.CommandText = @"select max(id)
+                                        from Department";
+                ret = (int)command.ExecuteScalar();
+            });
+            return ret;
+        }
+
+
+        
     }
 }

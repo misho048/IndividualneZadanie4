@@ -1,6 +1,6 @@
 ﻿namespace Individualne_Zadanie_4
 {
-    partial class frmCreateCompany
+    partial class frmCreateDepartment
     {
         /// <summary>
         /// Required designer variable.
@@ -32,8 +32,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtBoxName = new System.Windows.Forms.TextBox();
+            this.txtBoxCode = new System.Windows.Forms.TextBox();
             this.btnCreateBoss = new System.Windows.Forms.Button();
             this.lblBossName = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -74,36 +74,36 @@
             // 
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnBack.Location = new System.Drawing.Point(217, 296);
+            this.btnBack.Location = new System.Drawing.Point(341, 296);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(165, 53);
+            this.btnBack.Size = new System.Drawing.Size(220, 53);
             this.btnBack.TabIndex = 3;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // textBox1
+            // txtBoxName
             // 
-            this.textBox1.Location = new System.Drawing.Point(194, 36);
-            this.textBox1.MaxLength = 49;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(188, 20);
-            this.textBox1.TabIndex = 4;
+            this.txtBoxName.Location = new System.Drawing.Point(194, 36);
+            this.txtBoxName.MaxLength = 49;
+            this.txtBoxName.Name = "txtBoxName";
+            this.txtBoxName.Size = new System.Drawing.Size(367, 20);
+            this.txtBoxName.TabIndex = 4;
             // 
-            // textBox2
+            // txtBoxCode
             // 
-            this.textBox2.Location = new System.Drawing.Point(194, 112);
-            this.textBox2.MaxLength = 19;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(188, 20);
-            this.textBox2.TabIndex = 5;
+            this.txtBoxCode.Location = new System.Drawing.Point(194, 112);
+            this.txtBoxCode.MaxLength = 19;
+            this.txtBoxCode.Name = "txtBoxCode";
+            this.txtBoxCode.Size = new System.Drawing.Size(367, 20);
+            this.txtBoxCode.TabIndex = 5;
             // 
             // btnCreateBoss
             // 
             this.btnCreateBoss.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnCreateBoss.Location = new System.Drawing.Point(27, 226);
             this.btnCreateBoss.Name = "btnCreateBoss";
-            this.btnCreateBoss.Size = new System.Drawing.Size(355, 41);
+            this.btnCreateBoss.Size = new System.Drawing.Size(534, 41);
             this.btnCreateBoss.TabIndex = 8;
             this.btnCreateBoss.Text = "Choose Boss";
             this.btnCreateBoss.UseVisualStyleBackColor = true;
@@ -113,26 +113,26 @@
             // 
             this.lblBossName.AutoSize = true;
             this.lblBossName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblBossName.Location = new System.Drawing.Point(50, 168);
+            this.lblBossName.Location = new System.Drawing.Point(27, 168);
             this.lblBossName.Name = "lblBossName";
             this.lblBossName.Size = new System.Drawing.Size(0, 25);
             this.lblBossName.TabIndex = 9;
             // 
-            // frmCreateCompany
+            // frmCreateDepartment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(425, 378);
+            this.ClientSize = new System.Drawing.Size(587, 378);
             this.Controls.Add(this.lblBossName);
             this.Controls.Add(this.btnCreateBoss);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtBoxCode);
+            this.Controls.Add(this.txtBoxName);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblChooseName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmCreateCompany";
+            this.Name = "frmCreateDepartment";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmCreateCompany";
             this.Load += new System.EventHandler(this.frmCreateCompany_Load);
@@ -147,8 +147,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtBoxName;
+        private System.Windows.Forms.TextBox txtBoxCode;
         private System.Windows.Forms.Button btnCreateBoss;
         private System.Windows.Forms.Label lblBossName;
     }

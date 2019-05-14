@@ -61,5 +61,22 @@ namespace Logic
         }
 
 
+        public bool CreateDepartment(string name, string code, EnumDepartmentsType.DepartmentType departmentType,
+            int? managerId,int? superiorDepartmentId)
+        {
+            ModelDepartment department = new ModelDepartment
+            {
+                Name = name,
+                Code = code,
+                SuperiorDepartmentId = superiorDepartmentId,
+                ManagerEmployeeId = managerId,
+                DepartmentType = departmentType
+            };
+
+
+            return RepositoryManager.RepositoryDepartment.CreateDepartment(department);
+            
+        }
+
     }
 }

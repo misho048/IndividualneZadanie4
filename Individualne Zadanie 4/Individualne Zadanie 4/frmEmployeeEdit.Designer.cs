@@ -32,11 +32,11 @@
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.dGVEmployeeOverview = new System.Windows.Forms.DataGridView();
+            this.dGVOverview = new System.Windows.Forms.DataGridView();
             this.btnAllEmployees = new System.Windows.Forms.Button();
             this.btnUnsignedEmployees = new System.Windows.Forms.Button();
             this.btnCreate = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dGVEmployeeOverview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVOverview)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDelete
@@ -70,7 +70,6 @@
             this.btnSelect.TabIndex = 24;
             this.btnSelect.Text = "Select";
             this.btnSelect.UseVisualStyleBackColor = true;
-            this.btnSelect.Visible = false;
             this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // btnBack
@@ -84,17 +83,17 @@
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
             // 
-            // dGVEmployeeOverview
+            // dGVOverview
             // 
-            this.dGVEmployeeOverview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dGVEmployeeOverview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVEmployeeOverview.Location = new System.Drawing.Point(12, 91);
-            this.dGVEmployeeOverview.Name = "dGVEmployeeOverview";
-            this.dGVEmployeeOverview.ReadOnly = true;
-            this.dGVEmployeeOverview.RowHeadersVisible = false;
-            this.dGVEmployeeOverview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGVEmployeeOverview.Size = new System.Drawing.Size(567, 489);
-            this.dGVEmployeeOverview.TabIndex = 21;
+            this.dGVOverview.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dGVOverview.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVOverview.Location = new System.Drawing.Point(12, 91);
+            this.dGVOverview.Name = "dGVOverview";
+            this.dGVOverview.ReadOnly = true;
+            this.dGVOverview.RowHeadersVisible = false;
+            this.dGVOverview.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dGVOverview.Size = new System.Drawing.Size(567, 489);
+            this.dGVOverview.TabIndex = 21;
             // 
             // btnAllEmployees
             // 
@@ -141,11 +140,11 @@
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.dGVEmployeeOverview);
+            this.Controls.Add(this.dGVOverview);
             this.Name = "frmEmployeesOverView";
             this.Text = "frmEmployees";
             this.Load += new System.EventHandler(this.frmEmployeesOverView_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dGVEmployeeOverview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVOverview)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -156,7 +155,7 @@
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.DataGridView dGVEmployeeOverview;
+        private System.Windows.Forms.DataGridView dGVOverview;
         private System.Windows.Forms.Button btnAllEmployees;
         private System.Windows.Forms.Button btnUnsignedEmployees;
         private System.Windows.Forms.Button btnCreate;

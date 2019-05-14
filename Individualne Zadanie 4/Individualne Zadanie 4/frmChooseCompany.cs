@@ -1,4 +1,5 @@
-﻿using Logic;
+﻿using Data.Models;
+using Logic;
 using System;
 using System.Windows.Forms;
 
@@ -22,16 +23,24 @@ namespace Individualne_Zadanie_4
 
         private void btnCreateCompany_Click(object sender, EventArgs e)
         {
-            frmCreateCompany createCompany = new frmCreateCompany();
+            frmCreateDepartment createCompany = new frmCreateDepartment(EnumDepartmentsType.DepartmentType.Company);
             createCompany.ShowDialog();
+            if (createCompany.DialogResult == DialogResult.OK)
+            {
+                fillCmb();
+            }
         }
 
 
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-
+            ModelDepartment department = (ModelDepartment)cmbCompanies.SelectedItem;
+            frmDivisionOverview frmDivision = new frmDivisionOverview(department.Id);
+            frmDivision.ShowDialog();
         }
+
+        
 
         private void frmChooseCompany_Load(object sender, EventArgs e)
         {
@@ -40,9 +49,13 @@ namespace Individualne_Zadanie_4
             {
             _chooseCompanyViewModel.CheckConnection();
             }
-            cmbCompanies.DataSource = _chooseCompanyViewModel.GetCompanies();
+            fillCmb();
         }
 
        
+        private void fillCmb()
+        {
+            cmbCompanies.DataSource = _chooseCompanyViewModel.GetCompanies();
+        }
     }
 }

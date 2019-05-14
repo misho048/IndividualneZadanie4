@@ -1,18 +1,13 @@
 ﻿namespace Data.Models
 {
-    public class ModelDepartment
+    public class ModelDepartmentsOverview
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Code { get; set; }
-        public EnumDepartmentsType.DepartmentType DepartmentType { get; set; }
         public int? SuperiorDepartmentId { get; set; }
         public int? ManagerEmployeeId { get; set; }
-
-        public override string ToString()
-        {
-
-            return $"{Name} {Code}";
-        }
+        public string ManagerName { get; set; }
+        public string ManagerSurname { get; set; }
     }
 }

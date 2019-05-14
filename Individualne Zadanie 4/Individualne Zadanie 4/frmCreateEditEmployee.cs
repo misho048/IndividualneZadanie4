@@ -13,10 +13,14 @@ namespace Individualne_Zadanie_4
 {
     public partial class frmCreateEditEmployee : Form
     {
+        #region fields
         private CreateEditEmployeeViewModel _createEmployeeViewModel = new CreateEditEmployeeViewModel();
         private ModelEmployee _employee;
         private bool _isCreate;
+        #endregion
 
+
+        #region constructors
         public frmCreateEditEmployee()
         {
             InitializeComponent();
@@ -31,40 +35,15 @@ namespace Individualne_Zadanie_4
             _isCreate = false;
             FillTxtBoxes();
         }
+        #endregion
 
 
+        #region buttonEvents
         private void btnCancel_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
         }
-
-
-        private void FillTxtBoxes()
-        {
-            txtBoxEmail.Text = _employee.Email;
-            txtBoxName.Text = _employee.Name;
-            txtBoxSurname.Text = _employee.Surname;
-            txtBoxTitle.Text = _employee.Title;
-            txtBoxPhoneNumber.Text = _employee.PhoneNumber;
-
-        }
-
-
-        private bool CheckCorrectInput()
-        {
-
-            if ((txtBoxName.Text.ToString().Length < 3) || (txtBoxName.Text.ToString().Any(char.IsDigit)) ||
-                (txtBoxSurname.Text.ToString().Length < 3) || (txtBoxSurname.Text.ToString().Any(char.IsDigit)) ||
-                (txtBoxEmail.Text.ToString().Length < 3))
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
-
+        
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
@@ -104,5 +83,35 @@ namespace Individualne_Zadanie_4
                 MessageBox.Show("Input Name,Surname or/and Email in wrong format or too short");
             }
         }
+        #endregion
+
+
+        #region methods
+        private void FillTxtBoxes()
+        {
+            txtBoxEmail.Text = _employee.Email;
+            txtBoxName.Text = _employee.Name;
+            txtBoxSurname.Text = _employee.Surname;
+            txtBoxTitle.Text = _employee.Title;
+            txtBoxPhoneNumber.Text = _employee.PhoneNumber;
+
+        }
+
+
+        private bool CheckCorrectInput()
+        {
+
+            if ((txtBoxName.Text.ToString().Length < 3) || (txtBoxName.Text.ToString().Any(char.IsDigit)) ||
+                (txtBoxSurname.Text.ToString().Length < 3) || (txtBoxSurname.Text.ToString().Any(char.IsDigit)) ||
+                (txtBoxEmail.Text.ToString().Length < 3))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        #endregion
     }
 }

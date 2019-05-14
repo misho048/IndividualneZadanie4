@@ -153,8 +153,9 @@
             this.txtBoxEmail.Name = "txtBoxEmail";
             this.txtBoxEmail.Size = new System.Drawing.Size(208, 20);
             this.txtBoxEmail.TabIndex = 11;
+            this.txtBoxEmail.Text = "@";
             // 
-            // frmCreateEmployee
+            // frmCreateEditEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -171,7 +172,7 @@
             this.Controls.Add(this.lblSurname);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.lblTitle);
-            this.Name = "frmCreateEmployee";
+            this.Name = "frmCreateEditEmployee";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCreateEmployee";
             this.ResumeLayout(false);
