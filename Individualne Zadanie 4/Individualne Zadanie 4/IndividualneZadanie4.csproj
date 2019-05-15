@@ -56,7 +56,7 @@
     <Compile Include="CreateEditEmployeeViewModel.cs" />
     <Compile Include="DepartmentsViewModel.cs" />
     <Compile Include="EmployeeOverviewViewModel.cs" />
-    <Compile Include="EmployeesEditViewModel.cs" />
+    <Compile Include="EmployeesManagerViewModel.cs" />
     <Compile Include="frmChooseCompany.cs">
       <SubType>Form</SubType>
     </Compile>
