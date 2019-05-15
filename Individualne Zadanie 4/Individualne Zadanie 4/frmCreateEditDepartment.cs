@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace Individualne_Zadanie_4
 {
-    public partial class frmCreateEditDepartment : Form
+    public partial class FrmCreateEditDepartment : Form
     {
         #region fields
         private CreateEditDepartmentViewModel _createEditDepartmentViewModel = new CreateEditDepartmentViewModel();
@@ -15,7 +15,7 @@ namespace Individualne_Zadanie_4
         #endregion
 
         #region Constructors
-        public frmCreateEditDepartment(EnumDepartmentsType.DepartmentType departmentType)
+        public FrmCreateEditDepartment(EnumDepartmentsType.DepartmentType departmentType)
         {
             InitializeComponent();
             _departmentType = departmentType;
@@ -23,7 +23,7 @@ namespace Individualne_Zadanie_4
         }
 
 
-        public frmCreateEditDepartment(EnumDepartmentsType.DepartmentType departmentType, int superiorDepId)
+        public FrmCreateEditDepartment(EnumDepartmentsType.DepartmentType departmentType, int superiorDepId)
         {
             InitializeComponent();
             _superiorDepId = superiorDepId;
@@ -32,7 +32,7 @@ namespace Individualne_Zadanie_4
         }
 
 
-        public frmCreateEditDepartment(ModelDepartment department)
+        public FrmCreateEditDepartment(ModelDepartment department)
         {
             InitializeComponent();
             _department = department;
@@ -87,7 +87,7 @@ namespace Individualne_Zadanie_4
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            frmEmployeesEdit employeesOverView = new frmEmployeesEdit();
+            FrmEmployeesManager employeesOverView = new FrmEmployeesManager();
 
             if (_department != null)
             {

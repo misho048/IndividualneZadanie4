@@ -15,22 +15,23 @@ namespace Individualne_Zadanie_4
             InitializeComponent();
         }
 
+
         private void Button2_Click(object sender, EventArgs e)
         {
             Close();
         }
 
+
         private void BtnCreateCompany_Click(object sender, EventArgs e)
         {
-            frmCreateEditDepartment createCompany = new frmCreateEditDepartment(EnumDepartmentsType.DepartmentType.Company);
+            FrmCreateEditDepartment createCompany = new FrmCreateEditDepartment(EnumDepartmentsType.DepartmentType.Company);
             createCompany.ShowDialog();
             if (createCompany.DialogResult == DialogResult.OK)
             {
                 FillCmb();
             }
         }
-
-
+        
 
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
@@ -38,8 +39,7 @@ namespace Individualne_Zadanie_4
             FrmDivisionOverview frmDivision = new FrmDivisionOverview(department.Id);
             frmDivision.ShowDialog();
         }
-
-
+        
 
         private void FrmChooseCompany_Load(object sender, EventArgs e)
         {
@@ -66,12 +66,14 @@ namespace Individualne_Zadanie_4
             }
         }
 
+
         private void BtnEditCompany_Click(object sender, EventArgs e)
         {
-            frmCreateEditDepartment frmCreateEditDepartment = new frmCreateEditDepartment((ModelDepartment)cmbCompanies.SelectedItem);
+            FrmCreateEditDepartment frmCreateEditDepartment = new FrmCreateEditDepartment((ModelDepartment)cmbCompanies.SelectedItem);
             frmCreateEditDepartment.ShowDialog();
             FillCmb();
         }
+
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {

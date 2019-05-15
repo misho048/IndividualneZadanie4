@@ -87,11 +87,11 @@
     <Compile Include="frmDivisionOverview.Designer.cs">
       <DependentUpon>frmDivisionOverview.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEmployeesEdit.cs">
+    <Compile Include="frmEmployeesManager.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEmployeesEdit.Designer.cs">
-      <DependentUpon>frmEmployeesEdit.cs</DependentUpon>
+    <Compile Include="frmEmployeesManager.Designer.cs">
+      <DependentUpon>frmEmployeesManager.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEmployeeOverview.cs">
       <SubType>Form</SubType>
@@ -123,8 +123,8 @@
     <EmbeddedResource Include="frmDivisionOverview.resx">
       <DependentUpon>frmDivisionOverview.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEmployeesEdit.resx">
-      <DependentUpon>frmEmployeesEdit.cs</DependentUpon>
+    <EmbeddedResource Include="frmEmployeesManager.resx">
+      <DependentUpon>frmEmployeesManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmployeeOverview.resx">
       <DependentUpon>frmEmployeeOverview.cs</DependentUpon>

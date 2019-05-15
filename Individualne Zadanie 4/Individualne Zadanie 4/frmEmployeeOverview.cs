@@ -18,6 +18,7 @@ namespace Individualne_Zadanie_4
             FillDGV();
         }
 
+
         #region buttonEvents
         private void BtnDelete_Click(object sender, EventArgs e)
         {
@@ -34,7 +35,7 @@ namespace Individualne_Zadanie_4
 
         private void BtnCreate_Click(object sender, EventArgs e)
         {
-            frmEmployeesEdit frmEmployees = new frmEmployeesEdit();
+            FrmEmployeesManager frmEmployees = new FrmEmployeesManager();
             frmEmployees.ShowDialog();
             if (frmEmployees.DialogResult == DialogResult.OK)
             {

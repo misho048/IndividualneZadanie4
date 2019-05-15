@@ -5,7 +5,7 @@ using System.Windows.Forms;
 
 namespace Individualne_Zadanie_4
 {
-    public partial class frmCreateEditEmployee : Form
+    public partial class FrmCreateEditEmployee : Form
     {
         #region fields
         private CreateEditEmployeeViewModel _createEmployeeViewModel = new CreateEditEmployeeViewModel();
@@ -15,14 +15,14 @@ namespace Individualne_Zadanie_4
 
 
         #region constructors
-        public frmCreateEditEmployee()
+        public FrmCreateEditEmployee()
         {
             InitializeComponent();
             _isCreate = true;
         }
 
 
-        public frmCreateEditEmployee(ModelEmployee employee)
+        public FrmCreateEditEmployee(ModelEmployee employee)
         {
             InitializeComponent();
             _employee = employee;

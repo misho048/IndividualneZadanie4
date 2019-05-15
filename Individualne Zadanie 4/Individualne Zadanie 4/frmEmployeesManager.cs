@@ -4,10 +4,11 @@ using System.Windows.Forms;
 
 namespace Individualne_Zadanie_4
 {
-    public partial class frmEmployeesEdit : Form
+
+    public partial class FrmEmployeesManager : Form
     {
         #region fields
-        private EmployeesEditViewModel _employeesOverviewViewModel = new EmployeesEditViewModel();
+        private EmployeesManagerViewModel _employeesEditManagerModel = new EmployeesManagerViewModel();
 
         private bool _makeCollumns = true;
         #endregion
@@ -19,10 +20,11 @@ namespace Individualne_Zadanie_4
 
 
         #region formEvents and buttonEvents
-        public frmEmployeesEdit()
+        public FrmEmployeesManager()
         {
             InitializeComponent();
         }
+
 
         private void BtnAllEmployees_Click(object sender, EventArgs e)
         {
@@ -50,7 +52,8 @@ namespace Individualne_Zadanie_4
 
         private void BtnSelect_Click(object sender, EventArgs e)
         {
-            if (dGVOverview.CurrentCell == null)
+            if ((dGVOverview.CurrentCell == null) || (_employeesEditManagerModel.IsEmployeeManager(
+                (int)dGVOverview.CurrentRow.Cells["Id"].Value)))
             {
                 MessageBox.Show("Invalid Selection");
             }
@@ -65,7 +68,7 @@ namespace Individualne_Zadanie_4
 
         private void BtnCreate_Click(object sender, EventArgs e)
         {
-            frmCreateEditEmployee createEditEmployee = new frmCreateEditEmployee();
+            FrmCreateEditEmployee createEditEmployee = new FrmCreateEditEmployee();
             createEditEmployee.ShowDialog();
             if (createEditEmployee.DialogResult == DialogResult.OK)
             {
@@ -83,7 +86,7 @@ namespace Individualne_Zadanie_4
             else
             {
 
-                frmCreateEditEmployee createEditEmployee = new frmCreateEditEmployee((ModelEmployee)dGVOverview.CurrentRow.DataBoundItem);
+                FrmCreateEditEmployee createEditEmployee = new FrmCreateEditEmployee((ModelEmployee)dGVOverview.CurrentRow.DataBoundItem);
                 createEditEmployee.ShowDialog();
                 if (createEditEmployee.DialogResult == DialogResult.OK)
                 {
@@ -107,7 +110,7 @@ namespace Individualne_Zadanie_4
 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    if (_employeesOverviewViewModel.DeteleEmployee((ModelEmployee)dGVOverview.CurrentRow.DataBoundItem))
+                    if (_employeesEditManagerModel.DeteleEmployee((ModelEmployee)dGVOverview.CurrentRow.DataBoundItem))
                     {
                         MessageBox.Show("Delete successful");
                     }
@@ -129,7 +132,7 @@ namespace Individualne_Zadanie_4
         {
             if (haveDepartment)
             {
-                dGVOverview.DataSource = _employeesOverviewViewModel.GetAllEmployees();
+                dGVOverview.DataSource = _employeesEditManagerModel.GetAllEmployees();
 
                 if (_makeCollumns)
                 {
@@ -153,7 +156,7 @@ namespace Individualne_Zadanie_4
                     }
                     else
                     {
-                        (string depName, string depCode) = _employeesOverviewViewModel.GetDepartmentNameByEmployee((int)(row.Cells["Id"].Value));
+                        (string depName, string depCode) = _employeesEditManagerModel.GetDepartmentNameByEmployee((int)(row.Cells["Id"].Value));
                         row.Cells["DepartmentName"].Value = depName;
                         row.Cells["DepartmentCode"].Value = depCode;
                     }
@@ -162,7 +165,7 @@ namespace Individualne_Zadanie_4
             }
             else
             {
-                dGVOverview.DataSource = _employeesOverviewViewModel.GetUnsignedEmployees();
+                dGVOverview.DataSource = _employeesEditManagerModel.GetUnsignedEmployees();
                 dGVOverview.Columns["DepartmentName"].Visible = false;
                 dGVOverview.Columns["DepartmentCode"].Visible = false;
 

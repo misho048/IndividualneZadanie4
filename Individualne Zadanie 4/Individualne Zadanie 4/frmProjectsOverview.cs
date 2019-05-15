@@ -11,6 +11,7 @@ namespace Individualne_Zadanie_4
         private int _superiorDepId;
         #endregion
 
+
         public frmProjectsOverview(int superiorDepId)
         {
 
@@ -18,6 +19,7 @@ namespace Individualne_Zadanie_4
             _superiorDepId = superiorDepId;
             FillDGV();
         }
+
 
         #region buttonsClickEvents
         private void BtnBack_Click(object sender, EventArgs e)
@@ -28,7 +30,7 @@ namespace Individualne_Zadanie_4
 
         private void BtnCreate_Click(object sender, EventArgs e)
         {
-            frmCreateEditDepartment createDepartment = new frmCreateEditDepartment(EnumDepartmentsType.DepartmentType.Project, _superiorDepId);
+            FrmCreateEditDepartment createDepartment = new FrmCreateEditDepartment(EnumDepartmentsType.DepartmentType.Project, _superiorDepId);
             createDepartment.ShowDialog();
             if (createDepartment.DialogResult == DialogResult.OK)
             {
@@ -55,7 +57,7 @@ namespace Individualne_Zadanie_4
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            frmCreateEditDepartment frmCreateEditDepartment = new frmCreateEditDepartment(GetModel());
+            FrmCreateEditDepartment frmCreateEditDepartment = new FrmCreateEditDepartment(GetModel());
 
 
             frmCreateEditDepartment.ShowDialog();
@@ -79,6 +81,8 @@ namespace Individualne_Zadanie_4
         }
         #endregion
 
+
+        #region Methods
         private ModelDepartment GetModel()
         {
             return _departmentsViewModel.MakeDepartment((int)dGVOverview.CurrentRow.Cells["Id"].Value, (string)dGVOverview.CurrentRow.Cells["Name"].Value,
@@ -108,6 +112,6 @@ namespace Individualne_Zadanie_4
             }
 
         }
-
+        #endregion
     }
 }

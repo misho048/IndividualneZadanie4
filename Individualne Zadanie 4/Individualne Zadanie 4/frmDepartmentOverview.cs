@@ -20,7 +20,7 @@ namespace Individualne_Zadanie_4
         #region ButtonsClickEvents      
         private void BtnCreate_Click(object sender, EventArgs e)
         {
-            frmCreateEditDepartment createDepartment = new frmCreateEditDepartment(EnumDepartmentsType.DepartmentType.Department, _superiorDepId);
+            FrmCreateEditDepartment createDepartment = new FrmCreateEditDepartment(EnumDepartmentsType.DepartmentType.Department, _superiorDepId);
             createDepartment.ShowDialog();
             if (createDepartment.DialogResult == DialogResult.OK)
             {
@@ -46,7 +46,7 @@ namespace Individualne_Zadanie_4
         private void BtnEdit_Click(object sender, EventArgs e)
         {
 
-            frmCreateEditDepartment frmCreateEditDepartment = new frmCreateEditDepartment(
+            FrmCreateEditDepartment frmCreateEditDepartment = new FrmCreateEditDepartment(
                 _departmentsViewModel.MakeDepartment((int)dGVOverview.CurrentRow.Cells["Id"].Value, (string)dGVOverview.CurrentRow.Cells["Name"].Value,
                 (string)dGVOverview.CurrentRow.Cells["Code"].Value, (int?)dGVOverview.CurrentRow.Cells["SuperiorDepartmentId"].Value,
                 (int?)dGVOverview.CurrentRow.Cells["ManagerEmployeeId"].Value));

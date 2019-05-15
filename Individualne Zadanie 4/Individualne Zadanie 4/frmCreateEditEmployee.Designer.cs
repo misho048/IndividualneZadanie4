@@ -1,6 +1,6 @@
 ﻿namespace Individualne_Zadanie_4
 {
-    partial class frmCreateEditEmployee
+    partial class FrmCreateEditEmployee
     {
         /// <summary>
         /// Required designer variable.

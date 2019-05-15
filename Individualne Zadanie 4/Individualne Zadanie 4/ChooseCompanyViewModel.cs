@@ -17,6 +17,7 @@ namespace Individualne_Zadanie_4
     {
         private Logic.Logic _logic = new Logic.Logic();
 
+
         public BindingList<ModelDepartment> GetCompanies ()
         {
             return new BindingList<ModelDepartment>(

@@ -10,12 +10,15 @@ namespace Individualne_Zadanie_4
         private DepartmentsViewModel _departmentsViewModel = new DepartmentsViewModel();
         private int _superiorDepId;
         #endregion
+
+
         public FrmDivisionOverview(int companyId)
         {
             _superiorDepId = companyId;
             InitializeComponent();
             FillDGV();
         }
+
 
         #region ButtonClickEvents
         private void BtnBack_Click(object sender, EventArgs e)
@@ -26,7 +29,7 @@ namespace Individualne_Zadanie_4
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            frmCreateEditDepartment createDepartment = new frmCreateEditDepartment(EnumDepartmentsType.DepartmentType.Division, _superiorDepId);
+            FrmCreateEditDepartment createDepartment = new FrmCreateEditDepartment(EnumDepartmentsType.DepartmentType.Division, _superiorDepId);
             createDepartment.ShowDialog();
             if (createDepartment.DialogResult == DialogResult.OK)
             {
@@ -53,7 +56,7 @@ namespace Individualne_Zadanie_4
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            frmCreateEditDepartment frmCreateEditDepartment = new frmCreateEditDepartment(GetModel());
+            FrmCreateEditDepartment frmCreateEditDepartment = new FrmCreateEditDepartment(GetModel());
 
 
             frmCreateEditDepartment.ShowDialog();
@@ -76,6 +79,8 @@ namespace Individualne_Zadanie_4
         }
         #endregion
 
+
+        #region Methods
         private void FillDGV()
         {
             dGVOverview.DataSource = _departmentsViewModel.GetModelDepartmentsOverviews(_superiorDepId);
@@ -104,5 +109,6 @@ namespace Individualne_Zadanie_4
                (string)dGVOverview.CurrentRow.Cells["Code"].Value, (int?)dGVOverview.CurrentRow.Cells["SuperiorDepartmentId"].Value,
                (int?)dGVOverview.CurrentRow.Cells["ManagerEmployeeId"].Value);
         }
+        #endregion
     }
 }

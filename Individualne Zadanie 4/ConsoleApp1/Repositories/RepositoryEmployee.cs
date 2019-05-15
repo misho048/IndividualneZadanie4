@@ -150,24 +150,12 @@ namespace Data.Repositories
             bool isSuccessful = false;
             RepositoryManager.ExecuteSqlCommand((command) =>
             {
-                if (employee.DepartmentId == null)
-                {
-                    command.CommandText = @"update Employee
-                                            set Name=@Name,Surname=@Surname,Title=@Title,
-                                                PhoneNumber=@PhoneNumber,Mail=@Email
-                                            where id =@Id";
-                }
-                else
-                {
-
-                    command.CommandText = @"update Employee
+                command.CommandText = @"update Employee
                                             set Name=@Name,Surname=@Surname,Title=@Title,
                                                 PhoneNumber=@PhoneNumber,Mail=@Email,DepartmentId=@DepartmentID
                                             where id =@Id";
 
-                    command.Parameters.Add("@DepartmentID", SqlDbType.Int).Value = employee.DepartmentId;
-                }
-
+                command.Parameters.Add("@DepartmentID", SqlDbType.Int).Value = employee.DepartmentId ?? (Object)DBNull.Value;
                 command.Parameters.Add("@Title", SqlDbType.NVarChar).Value = employee.Title;
                 command.Parameters.Add("@Name", SqlDbType.NVarChar).Value = employee.Name;
                 command.Parameters.Add("@Surname", SqlDbType.NVarChar).Value = employee.Surname;
@@ -193,7 +181,7 @@ namespace Data.Repositories
             {
                 command.CommandText = @"select * from Employee 
                                         where DepartmentId = @DepartmentId ";
-                command.Parameters.Add("@DepartmentId",SqlDbType.Int).Value= departmentId;
+                command.Parameters.Add("@DepartmentId", SqlDbType.Int).Value = departmentId;
 
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
@@ -219,5 +207,26 @@ namespace Data.Repositories
 
         }
 
+
+        public bool IsManager(int employeeId)
+        {
+            bool ret = false;
+            RepositoryManager.ExecuteSqlCommand((command) =>
+            {
+                command.CommandText = @"select count(*) 
+                                        from Department
+                                        where ManagerEmployeeId = @Id";
+
+                command.Parameters.Add("@Id", SqlDbType.Int).Value = employeeId;
+
+                if ((int)command.ExecuteScalar() > 0)
+                {
+                    ret = true;
+                }
+                
+            });
+
+            return ret;
+        }
     }
 }

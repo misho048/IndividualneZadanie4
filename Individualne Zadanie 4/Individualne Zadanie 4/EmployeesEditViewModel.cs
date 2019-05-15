@@ -4,7 +4,7 @@ using System.ComponentModel;
 
 namespace Individualne_Zadanie_4
 {
-    class EmployeesEditViewModel
+    class EmployeesManagerViewModel
     {
         private Logic.Logic _logic = new Logic.Logic();
 
@@ -30,6 +30,11 @@ namespace Individualne_Zadanie_4
         public bool DeteleEmployee(ModelEmployee employee)
         {
             return RepositoryManager.RepositoryEmployee.DeleteEmployee(employee.Id);
+        }
+
+        public bool IsEmployeeManager (int employeeId)
+        {
+            return RepositoryManager.RepositoryEmployee.IsManager(employeeId);
         }
     }
 }
