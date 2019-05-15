@@ -1,72 +1,84 @@
 ﻿using Data.Models;
-using Logic;
 using System;
 using System.Windows.Forms;
 
 namespace Individualne_Zadanie_4
 {
-    public partial class frmChooseCompany : Form
+    public partial class FrmChooseCompany : Form
     {
 
         private ChooseCompanyViewModel _chooseCompanyViewModel = new ChooseCompanyViewModel();
 
 
-        public frmChooseCompany()
+        public FrmChooseCompany()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void btnCreateCompany_Click(object sender, EventArgs e)
+        private void BtnCreateCompany_Click(object sender, EventArgs e)
         {
             frmCreateEditDepartment createCompany = new frmCreateEditDepartment(EnumDepartmentsType.DepartmentType.Company);
             createCompany.ShowDialog();
             if (createCompany.DialogResult == DialogResult.OK)
             {
-                fillCmb();
+                FillCmb();
             }
         }
 
 
 
-        private void btnConfirm_Click(object sender, EventArgs e)
+        private void BtnConfirm_Click(object sender, EventArgs e)
         {
             ModelDepartment department = (ModelDepartment)cmbCompanies.SelectedItem;
-            frmDivisionOverview frmDivision = new frmDivisionOverview(department.Id);
+            FrmDivisionOverview frmDivision = new FrmDivisionOverview(department.Id);
             frmDivision.ShowDialog();
         }
 
-        
 
-        private void frmChooseCompany_Load(object sender, EventArgs e)
+
+        private void FrmChooseCompany_Load(object sender, EventArgs e)
         {
 
-            fillCmb();
+            FillCmb();
         }
 
-       
-        private void fillCmb()
+
+        private void FillCmb()
         {
+
             cmbCompanies.DataSource = _chooseCompanyViewModel.GetCompanies();
+            if (cmbCompanies.Items.Count == 0)
+            {
+                btnConfirm.Enabled = false;
+                btnEditCompany.Enabled = false;
+                btnDelete.Enabled = false;
+            }
+            else
+            {
+                btnConfirm.Enabled = true;
+                btnDelete.Enabled = true;
+                btnEditCompany.Enabled = true;
+            }
         }
 
-        private void btnEditCompany_Click(object sender, EventArgs e)
+        private void BtnEditCompany_Click(object sender, EventArgs e)
         {
             frmCreateEditDepartment frmCreateEditDepartment = new frmCreateEditDepartment((ModelDepartment)cmbCompanies.SelectedItem);
             frmCreateEditDepartment.ShowDialog();
-            fillCmb();
+            FillCmb();
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void BtnDelete_Click(object sender, EventArgs e)
         {
             if (_chooseCompanyViewModel.DeleteCompany((ModelDepartment)cmbCompanies.SelectedItem))
             {
-                fillCmb();
-           
+                FillCmb();
+
             }
             else
             {

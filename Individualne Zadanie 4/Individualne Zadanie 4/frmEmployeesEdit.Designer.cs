@@ -48,7 +48,7 @@
             this.btnDelete.TabIndex = 26;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // btnEdit
             // 
@@ -59,7 +59,7 @@
             this.btnEdit.TabIndex = 25;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // btnSelect
             // 
@@ -70,7 +70,7 @@
             this.btnSelect.TabIndex = 24;
             this.btnSelect.Text = "Select";
             this.btnSelect.UseVisualStyleBackColor = true;
-            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            this.btnSelect.Click += new System.EventHandler(this.BtnSelect_Click);
             // 
             // btnBack
             // 
@@ -81,7 +81,7 @@
             this.btnBack.TabIndex = 23;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
+            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click_1);
             // 
             // dGVOverview
             // 
@@ -104,7 +104,7 @@
             this.btnAllEmployees.TabIndex = 27;
             this.btnAllEmployees.Text = "All Employees";
             this.btnAllEmployees.UseVisualStyleBackColor = true;
-            this.btnAllEmployees.Click += new System.EventHandler(this.btnAllEmployees_Click);
+            this.btnAllEmployees.Click += new System.EventHandler(this.BtnAllEmployees_Click);
             // 
             // btnUnsignedEmployees
             // 
@@ -115,7 +115,7 @@
             this.btnUnsignedEmployees.TabIndex = 28;
             this.btnUnsignedEmployees.Text = "Unsigned Employees";
             this.btnUnsignedEmployees.UseVisualStyleBackColor = true;
-            this.btnUnsignedEmployees.Click += new System.EventHandler(this.btnUnsignedEmployees_Click);
+            this.btnUnsignedEmployees.Click += new System.EventHandler(this.BtnUnsignedEmployees_Click);
             // 
             // btnCreate
             // 
@@ -126,7 +126,7 @@
             this.btnCreate.TabIndex = 29;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            this.btnCreate.Click += new System.EventHandler(this.BtnCreate_Click);
             // 
             // frmEmployeesOverView
             // 
@@ -143,7 +143,7 @@
             this.Controls.Add(this.dGVOverview);
             this.Name = "frmEmployeesOverView";
             this.Text = "frmEmployees";
-            this.Load += new System.EventHandler(this.frmEmployeesOverView_Load);
+            this.Load += new System.EventHandler(this.FrmEmployeesOverView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dGVOverview)).EndInit();
             this.ResumeLayout(false);
 

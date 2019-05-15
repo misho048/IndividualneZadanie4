@@ -1,6 +1,6 @@
 ﻿namespace Individualne_Zadanie_4
 {
-    partial class frmDepartmentOverview
+    partial class FrmDepartmentOverview
     {
         /// <summary>
         /// Required designer variable.
@@ -46,7 +46,7 @@
             this.btnBack.TabIndex = 23;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click_1);
+            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click_1);
             // 
             // dGVOverview
             // 
@@ -68,7 +68,7 @@
             this.btnCreate.TabIndex = 27;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
+            this.btnCreate.Click += new System.EventHandler(this.BtnCreate_Click);
             // 
             // btnEdit
             // 
@@ -79,7 +79,7 @@
             this.btnEdit.TabIndex = 25;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // btnSelect
             // 
@@ -90,7 +90,7 @@
             this.btnSelect.TabIndex = 24;
             this.btnSelect.Text = "Select";
             this.btnSelect.UseVisualStyleBackColor = true;
-            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            this.btnSelect.Click += new System.EventHandler(this.BtnSelect_Click);
             // 
             // btnDelete
             // 
@@ -101,7 +101,7 @@
             this.btnDelete.TabIndex = 28;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // frmDepartmentOverview
             // 

@@ -1,11 +1,6 @@
 ﻿using Data.Models;
 using Data.Repositories;
-using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Individualne_Zadanie_4
 {
@@ -17,7 +12,7 @@ namespace Individualne_Zadanie_4
                 RepositoryManager.RepositoryEmployee.GetListOfEmployeesByDepartment(departmentId));
         }
 
-        public void SetDepartmentForEmployee(int employeeId,int? departmentId)
+        public void SetDepartmentForEmployee(int employeeId, int? departmentId)
         {
             RepositoryManager.RepositoryEmployee.SetDepartmentForEmployee(employeeId, departmentId);
         }

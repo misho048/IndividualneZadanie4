@@ -41,13 +41,13 @@ namespace Individualne_Zadanie_4
         #endregion
 
         #region btnClickEvents
-        private void btnBack_Click(object sender, EventArgs e)
+        private void BtnBack_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
         }
 
 
-        private void btnConfirm_Click(object sender, EventArgs e)
+        private void BtnConfirm_Click(object sender, EventArgs e)
         {
             if ((lblBossName.Text.Length > 2) && (txtBoxCode.Text.Length > 2) && (txtBoxName.Text.Length > 3))
             {
@@ -85,7 +85,7 @@ namespace Individualne_Zadanie_4
         }
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             frmEmployeesEdit employeesOverView = new frmEmployeesEdit();
 

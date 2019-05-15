@@ -76,13 +76,15 @@ namespace Data.Repositories
                 {
                     while (reader.Read())
                     {
-                        ModelDepartment company = new ModelDepartment();
-                        company.Id = reader.GetInt32(0);
-                        company.Name = reader.GetString(1);
-                        company.Code = reader.GetString(2);
-                        company.DepartmentType = departmentType;
-                        company.SuperiorDepartmentId = reader.IsDBNull(4) ? null : (int?)reader.GetInt32(4);
-                        company.ManagerEmployeeId = reader.IsDBNull(5) ? null : (int?)reader.GetInt32(5);
+                        ModelDepartment company = new ModelDepartment
+                        {
+                            Id = reader.GetInt32(0),
+                            Name = reader.GetString(1),
+                            Code = reader.GetString(2),
+                            DepartmentType = departmentType,
+                            SuperiorDepartmentId = reader.IsDBNull(4) ? null : (int?)reader.GetInt32(4),
+                            ManagerEmployeeId = reader.IsDBNull(5) ? null : (int?)reader.GetInt32(5)
+                        };
                         myListOfCompanies.Add(company);
                     }
                 }

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Individualne_Zadanie_4
 {
-    public partial class frmEmployeeOverview : Form
+    public partial class FrmEmployeeOverview : Form
     {
         #region fields
         private EmployeeOverviewViewModel _employeeOverviewViewModel = new EmployeeOverviewViewModel();
@@ -11,7 +11,7 @@ namespace Individualne_Zadanie_4
         #endregion
 
 
-        public frmEmployeeOverview(int superiorDepId)
+        public FrmEmployeeOverview(int superiorDepId)
         {
             _superiorDepId = superiorDepId;
             InitializeComponent();
@@ -19,20 +19,20 @@ namespace Individualne_Zadanie_4
         }
 
         #region buttonEvents
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void BtnDelete_Click(object sender, EventArgs e)
         {
             _employeeOverviewViewModel.SetDepartmentForEmployee((int)dGVOverview.CurrentRow.Cells["Id"].Value, null);
             FillDGV();
         }
 
 
-        private void btnBack_Click(object sender, EventArgs e)
+        private void BtnBack_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
         }
 
 
-        private void btnCreate_Click(object sender, EventArgs e)
+        private void BtnCreate_Click(object sender, EventArgs e)
         {
             frmEmployeesEdit frmEmployees = new frmEmployeesEdit();
             frmEmployees.ShowDialog();

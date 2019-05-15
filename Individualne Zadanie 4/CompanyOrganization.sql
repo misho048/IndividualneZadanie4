@@ -7,7 +7,7 @@ Id int Identity(1,1) not null primary key,
 Name varchar(50) not null,
 Code varchar (20) not null unique,
 DepartmentType varchar (20) not null,
-SuperiorDepartmentId int foreign key references Department(Id)
+SuperiorDepartmentId int foreign key references Department(Id))
 
 
 create table Employee

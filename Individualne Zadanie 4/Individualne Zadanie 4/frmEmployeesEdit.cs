@@ -1,12 +1,5 @@
 ﻿using Data.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Individualne_Zadanie_4
@@ -27,35 +20,35 @@ namespace Individualne_Zadanie_4
 
         #region formEvents and buttonEvents
         public frmEmployeesEdit()
-        { 
+        {
             InitializeComponent();
         }
-      
-        private void btnAllEmployees_Click(object sender, EventArgs e)
+
+        private void BtnAllEmployees_Click(object sender, EventArgs e)
         {
             LoadDGV(true);
         }
 
 
-        private void frmEmployeesOverView_Load(object sender, EventArgs e)
-        {        
+        private void FrmEmployeesOverView_Load(object sender, EventArgs e)
+        {
             LoadDGV(true);
         }
 
 
-        private void btnUnsignedEmployees_Click(object sender, EventArgs e)
+        private void BtnUnsignedEmployees_Click(object sender, EventArgs e)
         {
             LoadDGV(false);
         }
 
 
-        private void btnBack_Click_1(object sender, EventArgs e)
+        private void BtnBack_Click_1(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
         }
 
 
-        private void btnSelect_Click(object sender, EventArgs e)
+        private void BtnSelect_Click(object sender, EventArgs e)
         {
             if (dGVOverview.CurrentCell == null)
             {
@@ -70,7 +63,7 @@ namespace Individualne_Zadanie_4
         }
 
 
-        private void btnCreate_Click(object sender, EventArgs e)
+        private void BtnCreate_Click(object sender, EventArgs e)
         {
             frmCreateEditEmployee createEditEmployee = new frmCreateEditEmployee();
             createEditEmployee.ShowDialog();
@@ -81,7 +74,7 @@ namespace Individualne_Zadanie_4
         }
 
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void BtnEdit_Click(object sender, EventArgs e)
         {
             if (dGVOverview.CurrentCell == null)
             {
@@ -100,7 +93,7 @@ namespace Individualne_Zadanie_4
         }
 
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void BtnDelete_Click(object sender, EventArgs e)
         {
             if (dGVOverview.CurrentCell == null)
             {
@@ -160,9 +153,9 @@ namespace Individualne_Zadanie_4
                     }
                     else
                     {
-                        (string depName, string depCode) depInfo = _employeesOverviewViewModel.GetDepartmentNameByEmployee((int)(row.Cells["Id"].Value));
-                        row.Cells["DepartmentName"].Value = depInfo.depName;
-                        row.Cells["DepartmentCode"].Value = depInfo.depCode;
+                        (string depName, string depCode) = _employeesOverviewViewModel.GetDepartmentNameByEmployee((int)(row.Cells["Id"].Value));
+                        row.Cells["DepartmentName"].Value = depName;
+                        row.Cells["DepartmentCode"].Value = depCode;
                     }
 
                 }

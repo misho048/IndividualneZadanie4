@@ -50,14 +50,16 @@ namespace Data.Repositories
                 {
                     while (reader.Read())
                     {
-                        ModelEmployee employee = new ModelEmployee();
-                        employee.Id = reader.GetInt32(0);
-                        employee.Title = reader.IsDBNull(1) ? "" : reader.GetString(1);
-                        employee.Name = reader.GetString(2);
-                        employee.Surname = reader.GetString(3);
-                        employee.PhoneNumber = reader.IsDBNull(4) ? "" : reader.GetString(4);
-                        employee.Email = reader.GetString(5);
-                        employee.DepartmentId = reader.IsDBNull(6) ? null : (int?)reader.GetInt32(6);
+                        ModelEmployee employee = new ModelEmployee
+                        {
+                            Id = reader.GetInt32(0),
+                            Title = reader.IsDBNull(1) ? "" : reader.GetString(1),
+                            Name = reader.GetString(2),
+                            Surname = reader.GetString(3),
+                            PhoneNumber = reader.IsDBNull(4) ? "" : reader.GetString(4),
+                            Email = reader.GetString(5),
+                            DepartmentId = reader.IsDBNull(6) ? null : (int?)reader.GetInt32(6)
+                        };
                         myListOfEmployees.Add(employee);
 
                     }
@@ -197,14 +199,16 @@ namespace Data.Repositories
                 {
                     while (reader.Read())
                     {
-                        ModelEmployee employee = new ModelEmployee();
-                        employee.Id = reader.GetInt32(0);
-                        employee.Title = reader.IsDBNull(1) ? "" : reader.GetString(1);
-                        employee.Name = reader.GetString(2);
-                        employee.Surname = reader.GetString(3);
-                        employee.PhoneNumber = reader.IsDBNull(4) ? "" : reader.GetString(4);
-                        employee.Email = reader.GetString(5);
-                        employee.DepartmentId = reader.IsDBNull(6) ? null : (int?)reader.GetInt32(6);
+                        ModelEmployee employee = new ModelEmployee
+                        {
+                            Id = reader.GetInt32(0),
+                            Title = reader.IsDBNull(1) ? "" : reader.GetString(1),
+                            Name = reader.GetString(2),
+                            Surname = reader.GetString(3),
+                            PhoneNumber = reader.IsDBNull(4) ? "" : reader.GetString(4),
+                            Email = reader.GetString(5),
+                            DepartmentId = reader.IsDBNull(6) ? null : (int?)reader.GetInt32(6)
+                        };
                         myListOfEmployees.Add(employee);
 
                     }

@@ -1,6 +1,6 @@
 ﻿namespace Individualne_Zadanie_4
 {
-    partial class frmEmployeeOverview
+    partial class FrmEmployeeOverview
     {
         /// <summary>
         /// Required designer variable.
@@ -44,7 +44,7 @@
             this.btnAdd.TabIndex = 16;
             this.btnAdd.Text = "Add";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnCreate_Click);
+            this.btnAdd.Click += new System.EventHandler(this.BtnCreate_Click);
             // 
             // btnBack
             // 
@@ -55,7 +55,7 @@
             this.btnBack.TabIndex = 12;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // dGVOverview
             // 
@@ -77,7 +77,7 @@
             this.btnDelete.TabIndex = 15;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // frmEmployeeOverview
             // 

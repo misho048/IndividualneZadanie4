@@ -20,13 +20,13 @@ namespace Individualne_Zadanie_4
         }
 
         #region buttonsClickEvents
-        private void btnBack_Click(object sender, EventArgs e)
+        private void BtnBack_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
         }
 
-        
-        private void btnCreate_Click(object sender, EventArgs e)
+
+        private void BtnCreate_Click(object sender, EventArgs e)
         {
             frmCreateEditDepartment createDepartment = new frmCreateEditDepartment(EnumDepartmentsType.DepartmentType.Project, _superiorDepId);
             createDepartment.ShowDialog();
@@ -37,7 +37,7 @@ namespace Individualne_Zadanie_4
         }
 
 
-        private void btnSelect_Click(object sender, EventArgs e)
+        private void BtnSelect_Click(object sender, EventArgs e)
         {
 
             if (dGVOverview.CurrentCell == null)
@@ -46,14 +46,14 @@ namespace Individualne_Zadanie_4
             }
             else
             {
-                frmDepartmentOverview frmDepartmentOverview = new frmDepartmentOverview((int)dGVOverview.CurrentRow.Cells["Id"].Value);
+                FrmDepartmentOverview frmDepartmentOverview = new FrmDepartmentOverview((int)dGVOverview.CurrentRow.Cells["Id"].Value);
                 frmDepartmentOverview.ShowDialog();
 
             }
         }
 
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void BtnEdit_Click(object sender, EventArgs e)
         {
             frmCreateEditDepartment frmCreateEditDepartment = new frmCreateEditDepartment(GetModel());
 
@@ -62,8 +62,8 @@ namespace Individualne_Zadanie_4
             FillDGV();
         }
 
-        
-        private void btnDelete_Click(object sender, EventArgs e)
+
+        private void BtnDelete_Click(object sender, EventArgs e)
         {
 
             if (_departmentsViewModel.DeleteHigherDepartment(GetModel()))

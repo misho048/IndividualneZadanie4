@@ -1,6 +1,6 @@
 ﻿namespace Individualne_Zadanie_4
 {
-    partial class frmChooseCompany
+    partial class FrmChooseCompany
     {
         /// <summary>
         /// Required designer variable.
@@ -66,7 +66,7 @@
             this.btnConfirm.TabIndex = 2;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            this.btnConfirm.Click += new System.EventHandler(this.BtnConfirm_Click);
             // 
             // button2
             // 
@@ -77,7 +77,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Exit";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.Button2_Click);
             // 
             // btnCreateCompany
             // 
@@ -88,7 +88,7 @@
             this.btnCreateCompany.TabIndex = 4;
             this.btnCreateCompany.Text = "Create Company";
             this.btnCreateCompany.UseVisualStyleBackColor = true;
-            this.btnCreateCompany.Click += new System.EventHandler(this.btnCreateCompany_Click);
+            this.btnCreateCompany.Click += new System.EventHandler(this.BtnCreateCompany_Click);
             // 
             // btnEditCompany
             // 
@@ -99,7 +99,7 @@
             this.btnEditCompany.TabIndex = 5;
             this.btnEditCompany.Text = "Edit Company";
             this.btnEditCompany.UseVisualStyleBackColor = true;
-            this.btnEditCompany.Click += new System.EventHandler(this.btnEditCompany_Click);
+            this.btnEditCompany.Click += new System.EventHandler(this.BtnEditCompany_Click);
             // 
             // btnDelete
             // 
@@ -110,7 +110,7 @@
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "Delete Company";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // frmChooseCompany
             // 
@@ -127,7 +127,7 @@
             this.Name = "frmChooseCompany";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.frmChooseCompany_Load);
+            this.Load += new System.EventHandler(this.FrmChooseCompany_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="ConnectionString" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Server = TRANSFORMER1\SQLEXPRESS2016; Database=CompanyOrganization;Trusted_Connection=True</Value>
+      <Value Profile="(Default)">Server = MISKO\SQLEXPRESS; Database=CompanyOrganization;Trusted_Connection=True</Value>
     </Setting>
   </Settings>
 </SettingsFile>

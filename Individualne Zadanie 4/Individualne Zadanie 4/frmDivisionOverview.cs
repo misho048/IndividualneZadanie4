@@ -4,13 +4,13 @@ using System.Windows.Forms;
 
 namespace Individualne_Zadanie_4
 {
-    public partial class frmDivisionOverview : Form
+    public partial class FrmDivisionOverview : Form
     {
         #region fields
         private DepartmentsViewModel _departmentsViewModel = new DepartmentsViewModel();
         private int _superiorDepId;
         #endregion
-        public frmDivisionOverview(int companyId)
+        public FrmDivisionOverview(int companyId)
         {
             _superiorDepId = companyId;
             InitializeComponent();
@@ -18,13 +18,13 @@ namespace Individualne_Zadanie_4
         }
 
         #region ButtonClickEvents
-        private void btnBack_Click(object sender, EventArgs e)
+        private void BtnBack_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
         }
-                     
-        
-        private void btnAdd_Click(object sender, EventArgs e)
+
+
+        private void BtnAdd_Click(object sender, EventArgs e)
         {
             frmCreateEditDepartment createDepartment = new frmCreateEditDepartment(EnumDepartmentsType.DepartmentType.Division, _superiorDepId);
             createDepartment.ShowDialog();
@@ -35,7 +35,7 @@ namespace Individualne_Zadanie_4
         }
 
 
-        private void btnSelect_Click(object sender, EventArgs e)
+        private void BtnSelect_Click(object sender, EventArgs e)
         {
             if (dGVOverview.CurrentCell == null)
             {
@@ -51,7 +51,7 @@ namespace Individualne_Zadanie_4
         }
 
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void BtnEdit_Click(object sender, EventArgs e)
         {
             frmCreateEditDepartment frmCreateEditDepartment = new frmCreateEditDepartment(GetModel());
 
@@ -61,7 +61,7 @@ namespace Individualne_Zadanie_4
         }
 
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void BtnDelete_Click(object sender, EventArgs e)
         {
             if (_departmentsViewModel.DeleteHigherDepartment(GetModel()))
             {

@@ -68,7 +68,7 @@
             this.btnConfirm.TabIndex = 2;
             this.btnConfirm.Text = "Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            this.btnConfirm.Click += new System.EventHandler(this.BtnConfirm_Click);
             // 
             // btnBack
             // 
@@ -80,7 +80,7 @@
             this.btnBack.TabIndex = 3;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // txtBoxName
             // 
@@ -107,7 +107,7 @@
             this.btnCreateBoss.TabIndex = 8;
             this.btnCreateBoss.Text = "Choose Boss";
             this.btnCreateBoss.UseVisualStyleBackColor = true;
-            this.btnCreateBoss.Click += new System.EventHandler(this.button1_Click);
+            this.btnCreateBoss.Click += new System.EventHandler(this.Button1_Click);
             // 
             // lblBossName
             // 

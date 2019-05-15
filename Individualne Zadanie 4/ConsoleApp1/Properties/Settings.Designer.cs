@@ -25,8 +25,7 @@ namespace Data.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Server = TRANSFORMER1\\SQLEXPRESS2016; Database=CompanyOrganization;Trusted_Connec" +
-            "tion=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Server = MISKO\\SQLEXPRESS; Database=CompanyOrganization;Trusted_Connection=True")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));

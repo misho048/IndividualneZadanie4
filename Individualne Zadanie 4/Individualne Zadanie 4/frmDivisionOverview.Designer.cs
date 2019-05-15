@@ -1,6 +1,6 @@
 ﻿namespace Individualne_Zadanie_4
 {
-    partial class frmDivisionOverview
+    partial class FrmDivisionOverview
     {
         /// <summary>
         /// Required designer variable.
@@ -58,7 +58,7 @@
             this.btnBack.TabIndex = 5;
             this.btnBack.Text = "Back";
             this.btnBack.UseVisualStyleBackColor = true;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            this.btnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // btnSelect
             // 
@@ -69,7 +69,7 @@
             this.btnSelect.TabIndex = 6;
             this.btnSelect.Text = "Select";
             this.btnSelect.UseVisualStyleBackColor = true;
-            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            this.btnSelect.Click += new System.EventHandler(this.BtnSelect_Click);
             // 
             // btnEdit
             // 
@@ -80,7 +80,7 @@
             this.btnEdit.TabIndex = 7;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.btnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // btnDelete
             // 
@@ -91,7 +91,7 @@
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // btnCreate
             // 
@@ -102,7 +102,7 @@
             this.btnCreate.TabIndex = 9;
             this.btnCreate.Text = "Create";
             this.btnCreate.UseVisualStyleBackColor = true;
-            this.btnCreate.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnCreate.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // frmDivisionOverview
             // 

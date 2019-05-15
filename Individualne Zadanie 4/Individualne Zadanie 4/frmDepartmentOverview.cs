@@ -1,23 +1,16 @@
 ﻿using Data.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Individualne_Zadanie_4
 {
-    public partial class frmDepartmentOverview : Form
+    public partial class FrmDepartmentOverview : Form
     {
         #region fields
         private DepartmentsViewModel _departmentsViewModel = new DepartmentsViewModel();
         private int _superiorDepId;
         #endregion
-        public frmDepartmentOverview(int superiorDepId)
+        public FrmDepartmentOverview(int superiorDepId)
         {
             _superiorDepId = superiorDepId;
             InitializeComponent();
@@ -25,7 +18,7 @@ namespace Individualne_Zadanie_4
         }
 
         #region ButtonsClickEvents      
-        private void btnCreate_Click(object sender, EventArgs e)
+        private void BtnCreate_Click(object sender, EventArgs e)
         {
             frmCreateEditDepartment createDepartment = new frmCreateEditDepartment(EnumDepartmentsType.DepartmentType.Department, _superiorDepId);
             createDepartment.ShowDialog();
@@ -36,21 +29,21 @@ namespace Individualne_Zadanie_4
         }
 
 
-        private void btnBack_Click_1(object sender, EventArgs e)
+        private void BtnBack_Click_1(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Cancel;
         }
 
 
-        private void btnSelect_Click(object sender, EventArgs e)
+        private void BtnSelect_Click(object sender, EventArgs e)
         {
-            frmEmployeeOverview employeeOverview = new frmEmployeeOverview((int)dGVOverview.CurrentRow.Cells["Id"].Value);
+            FrmEmployeeOverview employeeOverview = new FrmEmployeeOverview((int)dGVOverview.CurrentRow.Cells["Id"].Value);
             employeeOverview.ShowDialog();
 
         }
 
 
-        private void btnEdit_Click(object sender, EventArgs e)
+        private void BtnEdit_Click(object sender, EventArgs e)
         {
 
             frmCreateEditDepartment frmCreateEditDepartment = new frmCreateEditDepartment(
@@ -64,7 +57,7 @@ namespace Individualne_Zadanie_4
         }
 
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void BtnDelete_Click(object sender, EventArgs e)
         {
             if (_departmentsViewModel.DeleteDepartment((int)dGVOverview.CurrentRow.Cells["Id"].Value))
             {
